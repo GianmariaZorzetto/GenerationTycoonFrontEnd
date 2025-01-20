@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/*body {*/
+/*  display: block;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  background: url('/sfondi_schermate/immagine3.svg') no-repeat center center;*/
+/*  background-size: cover;*/
+/*  !* Se vuoi l’immagine fissa durante lo scroll /*/
+/*  / background-attachment: fixed; *!*/
+/*}*/
+
+/*html, body {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Imposta lo sfondo con barre nere */
+body {
+  background-color: #000; /* colore delle “barre” */
+  background-image: url('/sfondi_schermate/immagine3.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* Contiene l'intera immagine */
+}
