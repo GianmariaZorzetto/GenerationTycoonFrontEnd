@@ -27,7 +27,7 @@ html, body {
 /* Imposta lo sfondo con barre nere */
 body {
   background-color: #000; /* colore delle “barre” */
-  background-image: url('/sfondi_schermate/immagine3.svg');
+  background-image: url('/nero/nero.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain; /* Contiene l'intera immagine */
