@@ -1,14 +1,18 @@
 import { Routes } from '@angular/router';
-import {SchermataInizialeComponent} from './Component/schermata-iniziale/schermata-iniziale.component';
-import {SchermataLoginComponent} from './Component/schermata-login/schermata-login.component';
-import {SchermataRegistratiComponent} from './Component/schermata-registrati/schermata-registrati.component';
 import {SchermataBoomComponent} from './Component/schermata-boom/schermata-boom.component';
 import {SchermataDesktopComponent} from './Component/schermata-desktop/schermata-desktop.component';
+import { SchermataInizialeComponent } from './Component/schermata-iniziale/schermata-iniziale.component';
+import { SchermataLoginComponent } from './Component/schermata-login/schermata-login.component';
+import { SchermataRegistratiComponent } from './Component/schermata-registrati/schermata-registrati.component';
+import { BedroomComponent } from './Component/bedroom/bedroom.component';  // Assicurati di importare il componente
+import { LeaderboardComponent } from './Component/leaderboard/leaderboard.component';  // Importa anche il LeaderboardComponent
 
 export const routes: Routes = [
   {path: '', component: SchermataInizialeComponent},
   {path: 'login', component: SchermataLoginComponent},
   {path: 'register', component: SchermataRegistratiComponent},
   {path: 'desktop', component: SchermataDesktopComponent},
-  {path: 'boom', component: SchermataBoomComponent}
+  {path: 'boom', component: SchermataBoomComponent},
+  { path: 'bedroom', component: BedroomComponent },
+  { path: 'leaderboard', component: LeaderboardComponent }
 ];

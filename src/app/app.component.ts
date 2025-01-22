@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {SchermataInizialeComponent} from './Component/schermata-iniziale/schermata-iniziale.component';
 import {BackgroundService} from '../../services/background.service';
-import {SchermataBoomComponent} from './Component/schermata-boom/schermata-boom.component';
 
 @Component({
   selector: 'app-root',
