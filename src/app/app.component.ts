@@ -2,10 +2,11 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {SchermataInizialeComponent} from './Component/schermata-iniziale/schermata-iniziale.component';
 import {BackgroundService} from '../../services/background.service';
+import {SchermataBoomComponent} from './Component/schermata-boom/schermata-boom.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SchermataInizialeComponent],
+  imports: [RouterOutlet, SchermataInizialeComponent, SchermataBoomComponent],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.css'
