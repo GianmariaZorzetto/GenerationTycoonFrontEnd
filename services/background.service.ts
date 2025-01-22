@@ -17,7 +17,7 @@ export class BackgroundService {
    */
   changeBackground(imageName: string): void {
     // In questo esempio, supponiamo che i file siano in /sfondi_schermate/
-    this.renderer.setStyle(document.body, 'background-image', `url('/sfondi_schermate/${imageName}')`);
+    this.renderer.setStyle(document.getElementById("sfondo"), 'background-image', `url('/sfondi_schermate/${imageName}')`);
     // Se vuoi anche rimuovere altri stili o cambiarli, puoi farlo qui
   }
 }

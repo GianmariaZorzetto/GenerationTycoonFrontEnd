@@ -5,6 +5,7 @@ import {BackgroundService} from '../../../../services/background.service';
   selector: 'app-schermata-login',
   imports: [],
   templateUrl: './schermata-login.component.html',
+  standalone: true,
   styleUrl: './schermata-login.component.css'
 })
 export class SchermataLoginComponent
