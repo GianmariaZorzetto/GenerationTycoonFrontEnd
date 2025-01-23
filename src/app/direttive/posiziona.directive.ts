@@ -10,7 +10,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @Input() w: number = 0;   // Valore di default, se vuoi
   @Input() h: number = 0;
   @Input() centroMassa: boolean = false;
-  @Input() autore: string = "M";
+  @Input() autore: string = "R";
   vostreDimensioni = {
     "M":[2560,1270],
     "F":[1915,945],

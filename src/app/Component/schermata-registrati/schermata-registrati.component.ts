@@ -1,54 +1,53 @@
 import { Component } from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {BackgroundService} from '../../../../services/background.service';
-import {FormsModule} from '@angular/forms';
-import {UserDTOReq} from '../../model/UserDTOReq';
-import {PosizionaDirective} from '../../direttive/posiziona.directive';
-import {NgForOf, NgIf} from '@angular/common';
+import {Router, RouterLink} from '@angular/router';
+import { BackgroundService } from '../../../../services/background.service';
+import { FormsModule } from '@angular/forms';
+import { UserDTOReq } from '../../model/UserDTOReq';
+import { PosizionaDirective } from '../../direttive/posiziona.directive';
+import { NgForOf, NgIf } from '@angular/common';
+import {HttpService} from '../../services/http-service.service';
+
 
 @Component({
   selector: 'app-schermata-registrati',
-  imports: [RouterLink, FormsModule, PosizionaDirective, NgIf, NgForOf],
+  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink],
   templateUrl: './schermata-registrati.component.html',
   standalone: true,
-  styleUrl: './schermata-registrati.component.css'
+  styleUrls: ['./schermata-registrati.component.css']
 })
-export class SchermataRegistratiComponent
-{
-  user:UserDTOReq=  {
-    email:"",
-    username:"",
-    password:""
+export class SchermataRegistratiComponent {
+  showPassword = true;
+
+  user: UserDTOReq = {
+    email: '',
+    username: '',
+    password: '',
+    difficulty: ''  // Aggiunta la proprietà 'difficulty'
   };
 
-  // bottoneFacile: string = 'sfondi_schermate/register/facile_button.png';  // Immagine di base
-  // modalitaFacile: string = 'sfondi_schermate/register/modalita_facile.png';  // Immagine che appare al passaggio del mouse
-  // bottoneIntermedio: string = 'sfondi_schermate/register/intermedio_button.png';  // Immagine di base
-  // modalitaIntermedia: string = 'sfondi_schermate/register/modalita_intermedia.png';  // Immagine che appare al passaggio del mouse
-  // bottoneFacile: string = 'sfondi_schermate/register/facile_button.png';  // Immagine di base
-  // modalitaFacile: string = 'sfondi_schermate/register/modalita_facile.png';  // Immagine che appare al passaggio del mouse
-  // Array di oggetti che rappresentano i bottoni
+  // Variabile per tenere traccia della difficoltà selezionata
+  selectedDifficulty: string = '';
+
+  // Array di oggetti che rappresentano i bottoni di difficoltà
   items = [
     {
       baseX: 440, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/facile_button.png',
-      hoverX: 382, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_facile.png',
-      isHovered: false
+      isHovered: false,
+      // Aggiungi altre caratteristiche che non dipendono dal mouse
     },
     {
       baseX: 680, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/intermedio_button.png',
-      hoverX: 619, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_intermedia.png',
-      isHovered: false
+      isHovered: false,
     },
     {
       baseX: 920, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/avanzato_button.png',
-      hoverX: 853, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_avanzata.png',
-      isHovered: false
+      isHovered: false,
     }
   ];
 
@@ -62,8 +61,22 @@ export class SchermataRegistratiComponent
     this.items[index].isHovered = false;
   }
 
-constructor(private service: BackgroundService)
-  {
-    this.service.changeBackground("register/schermata_registrazioneProva.png")
+  // Metodo per selezionare la difficoltà (facile, intermedio, avanzato)
+  selectDifficulty(difficulty: string) {
+    this.selectedDifficulty = difficulty;
+    this.user.difficulty = difficulty; // Aggiorna la difficoltà nel modello user
+  }
+
+  // Metodo per gestire il salvataggio del nuovo utente
+  saveUser() {
+    console.log('Utente creato:', this.user);
+    // Chiamata al servizio HTTP per salvare l'utente
+    this.httpService.insertUser(this.user).subscribe(() => {
+      this.route.navigate(['/benvenuto']);  // Naviga alla pagina di benvenuto dopo il salvataggio
+    });
+  }
+
+  constructor(private service: BackgroundService, private route: Router,private httpService: HttpService) {
+    this.service.changeBackground('register/schermata_registrazioneProva.png');
   }
 }
