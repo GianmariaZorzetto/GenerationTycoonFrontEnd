@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {SchermataInizialeComponent} from './Component/schermata-iniziale/schermata-iniziale.component';
 import {BackgroundService} from '../../services/background.service';
+import {SchermataBoomComponent} from './Component/schermata-boom/schermata-boom.component';
 import {BedroomComponent} from './Component/bedroom/bedroom.component';
 import {SchermataRegistratiComponent} from './Component/schermata-registrati/schermata-registrati.component';
 
@@ -21,7 +22,7 @@ export class AppComponent {
 
   cambia(){
 
-    this.bg.changeBackground("cameretta.png")
+    this.bg.changeBackground("immagine.svg")
 
   }
 }
