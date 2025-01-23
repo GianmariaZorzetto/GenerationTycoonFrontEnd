@@ -24,11 +24,11 @@
 <a (mouseenter)="onMouseEnter('imgNoodle')" (mouseleave)="onMouseLeave()">
   <img [style.opacity]="isHovered === 'imgNoodle' ? '1' : '0'"
        [style.transition]="'opacity 0.1s'"
-       posizione [x]="1378" [y]="628" [w]="246" [h]="210"
+       posizione [x]="1378" [y]="618" [w]="240" [h]="215"
        src="sfondi_schermate/bottoni/noodle.png" alt="noodle">
 </a>
 
-<a (mouseenter)="onMouseEnter('imgLibroBlu')" (mouseleave)="onMouseLeave()">
+<a routerLink="/blueBook" (mouseenter)="onMouseEnter('imgLibroBlu')" (mouseleave)="onMouseLeave()">
   <img [style.opacity]="isHovered === 'imgLibroBlu' ? '1' : '0'"
        [style.transition]="'opacity 0.1s'"
        posizione [x]="465" [y]="320" [w]="46" [h]="160"
@@ -40,4 +40,19 @@
        [style.transition]="'opacity 0.1s'"
        posizione [x]="598" [y]="550" [w]="46" [h]="160"
        src="sfondi_schermate/bottoni/libroVerde.png" alt="libroVerde">
+</a>
+
+<a routerLink="/desktop" (mouseenter)="onMouseEnter('imgComputer')" (mouseleave)="onMouseLeave()">
+  <img [style.opacity]="isHovered === 'imgComputer' ? '1' : '0'"
+       [style.transition]="'opacity 0.1s'"
+       posizione [x]="1584" [y]="450" [w]="446" [h]="315"
+       src="sfondi_schermate/bottoni/computerIcon.png" alt="computer">
+</a>
+
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+   (mouseenter)="onMouseEnter('imgBottoneRosso')" (mouseleave)="onMouseLeave()">
+  <img [style.opacity]="isHovered === 'imgBottoneRosso' ? '1' : '0'"
+       [style.transition]="'opacity 0.1s'"
+       posizione [x]="820" [y]="660" [w]="45" [h]="45"
+       src="sfondi_schermate/bottoni/bottoneRosso.png" alt="bottoneRosso">
 </a>

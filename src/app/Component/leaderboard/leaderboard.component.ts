@@ -17,7 +17,7 @@ import {PosizionaDirective} from "../../direttive/posiziona.directive";
 //cambiare immagine di sfondo, dimensioni diverse (vedi figma)
 export class LeaderboardComponent {
   constructor(private bg:BackgroundService) {
-    this.bg.changeBackground("stanza/lavagnaVerde.png")
+    this.bg.changeBackground("stanza/leaderboardOpen.png")
   }
 
 }

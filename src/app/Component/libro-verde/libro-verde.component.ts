@@ -15,6 +15,6 @@ import {RouterLink} from '@angular/router';
 })
 export class LibroVerdeComponent {
   constructor(private bg:BackgroundService) {
-    this.bg.changeBackground("stanza/aperturaLibroVerde.png")
+    this.bg.changeBackground("stanza/libroVerdeOpen.png")
   }
 }
