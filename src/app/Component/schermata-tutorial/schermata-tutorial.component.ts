@@ -4,18 +4,16 @@ import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 
 @Component({
-  selector: 'app-schermata-desktop',
+  selector: 'app-schermata-tutorial',
   imports: [
     RouterLink,
     PosizionaDirective
   ],
-  templateUrl: './schermata-desktop.component.html',
-  styleUrl: './schermata-desktop.component.css'
+  templateUrl: './schermata-tutorial.component.html',
+  styleUrl: './schermata-tutorial.component.css'
 })
-export class SchermataDesktopComponent
-{
-  constructor(private bg:BackgroundService)
-  {
-    this.bg.changeBackground("desktop/sfondo_desktop_ufficiale.png")
+export class SchermataTutorialComponent {
+  constructor(private bg: BackgroundService) {
+    this.bg.changeBackground("tutorial/tutorial_finale.png")
   }
 }
