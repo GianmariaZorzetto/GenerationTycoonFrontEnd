@@ -23,10 +23,10 @@ a img {
 
 /* SCSS per input scontornato */
 .scontornato-input {
-  border: 1px solid #ccc; /* Bordo sottile, colore chiaro */
+  border: 1px solid #000000; /* Bordo sottile, colore chiaro */
   border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
   padding: 12px 20px; /* Padding più ampio per un look più morbido */
-  background-color: rgba(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
+  background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
   font-size: 30px; /* Adatta la dimensione del testo */
 
   /* Centrare il testo del placeholder */
@@ -74,4 +74,16 @@ a img {
 
 .image-container .base-image:hover + .hover-image {
   display: block; /* Mostra l'immagine hover quando il mouse è sopra la base */
+}
+
+.selected {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per dare l'effetto "premuto" */
+}
+
+.selected .base-image {
+  opacity: 0.5; /* Riduci l'opacità dell'immagine base quando selezionato */
+}
+
+.selected .hover-image {
+  opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
 }

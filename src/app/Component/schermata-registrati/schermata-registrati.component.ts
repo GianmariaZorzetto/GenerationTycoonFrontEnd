@@ -4,13 +4,13 @@ import { BackgroundService } from "../../../../services/background.service";
 import { FormsModule } from "@angular/forms";
 import { UserDTOReq } from "../../model/UserDTOReq";
 import { PosizionaDirective } from "../../direttive/posiziona.directive";
-import { NgForOf, NgIf } from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
 
 
 @Component({
   selector: "app-schermata-registrati",
-  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink],
+  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink, NgClass],
   templateUrl: "./schermata-registrati.component.html",
   standalone: true,
   styleUrls: ["./schermata-registrati.component.css"]
@@ -25,7 +25,9 @@ export class SchermataRegistratiComponent {
     difficulty: "EASY" // Valore predefinito come stringa
   };
 
-  selectedDifficulty: string = "EASY"; // Predefinito
+  // Valore predefinito
+  selectedDifficulty: string = "EASY";
+  selectedButton: string = 'EASY';
 
   // Array di oggetti che rappresentano i bottoni di difficoltà
   items = [
@@ -63,6 +65,7 @@ export class SchermataRegistratiComponent {
   // Metodo per selezionare la difficoltà (EASY,MEDIUM,HARD)
   selectDifficulty(difficulty: string) {
     this.selectedDifficulty = difficulty;
+    this.selectedButton = difficulty;
     this.user.difficulty = difficulty; // Aggiorna la difficoltà nel modello user
   }
 
@@ -76,6 +79,6 @@ export class SchermataRegistratiComponent {
   }
 
   constructor(private service: BackgroundService, private route: Router,private httpService: HttpService) {
-    this.service.changeBackground("register/schermata_registrazioneProva.png");
+    this.service.changeBackground("register/schermata_registrazione.png");
   }
 }

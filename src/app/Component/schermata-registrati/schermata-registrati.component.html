@@ -1,7 +1,5 @@
-<a routerLink="benvenuto">
-  <button (click)="saveUser()">
-    <img posizione [x]="1026.5" [y]="60" [w]="148" [h]="55" src="sfondi_schermate/register/bottone_avanti.png" alt="bottone_avanti" />
-  </button>
+<a routerLink="benvenuto" (click)="saveUser()">
+    <img posizione [x]="1026.5" [y]="60" [w]="148" [h]="55" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti" />
 </a>
 <a routerLink="">
   <img posizione [x]="370" [y]="59" [w]="63" [h]="57" src="sfondi_schermate/register/x_button.png" alt="x_button" />
@@ -34,17 +32,17 @@
      class="transparent-button"
      posizione [x]="1090" [y]="365" [w]="30" [h]="25"
      (click)="showPassword = !showPassword">
-  <img *ngIf="showPassword; else hideIcon" src="sfondi_schermate/register/eye.png" alt="Mostra password">
+  <img *ngIf="showPassword; else hideIcon" src="sfondi_schermate/register/show_button.png" alt="Mostra password">
   <ng-template #hideIcon>
-    <img src="sfondi_schermate/register/eye_hide.png" alt="Nascondi password">
+    <img src="sfondi_schermate/register/hide_button.png" alt="Nascondi password">
   </ng-template>
   </button>
   <br>
 
  <div class="image-container">
   <!-- Bottone "Facile" -->
-  <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)" (click)="selectDifficulty('EASY')">
-    <!-- Immagine del bottone -->
+  <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)" (click)="selectDifficulty('EASY')"
+       [ngClass]="{'selected': selectedButton === 'EASY'}">
     <img
       posizione
       [x]="440" [y]="531"
@@ -52,21 +50,19 @@
       [src]="items[0].baseImage"
       alt="bottone_facile"
       class="base-image" />
-
-    <!-- Immagine dell'hover -->
     <img
       *ngIf="items[0].isHovered"
       posizione
-      [x]="383" [y]="425"
-      [w]="290" [h]="110"
+      [x]="361" [y]="415"
+      [w]="330" [h]="125"
       [src]="items[0].hoverImage"
       alt="modalita_facile"
       class="hover-image" />
   </div>
 
    <!-- Bottone "Intermedio" -->
-  <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)" (click)="selectDifficulty('MEDIUM')">
-    <!-- Immagine del bottone -->
+  <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)" (click)="selectDifficulty('MEDIUM')"
+       [ngClass]="{'selected': selectedButton === 'MEDIUM'}">
     <img
       posizione
       [x]="680" [y]="531"
@@ -74,21 +70,19 @@
       [src]="items[1].baseImage"
       alt="bottone_intermedio"
       class="base-image" />
-
-    <!-- Immagine dell'hover -->
     <img
       *ngIf="items[1].isHovered"
       posizione
-      [x]="620" [y]="425"
-      [w]="290" [h]="110"
+      [x]="603" [y]="415"
+      [w]="330" [h]="125"
       [src]="items[1].hoverImage"
       alt="modalita_intermedia"
       class="hover-image" />
   </div>
 
    <!-- Bottone "Avanzato" -->
-  <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)" (click)="selectDifficulty('HARD')">
-    <!-- Immagine del bottone -->
+  <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)" (click)="selectDifficulty('HARD')"
+       [ngClass]="{'selected': selectedButton === 'HARD'}">
     <img
       posizione
       [x]="920" [y]="531"
@@ -96,13 +90,11 @@
       [src]="items[2].baseImage"
       alt="bottone_avanzato"
       class="base-image" />
-
-    <!-- Immagine dell'hover -->
     <img
       *ngIf="items[2].isHovered"
       posizione
-      [x]="865" [y]="425"
-      [w]="290" [h]="110"
+      [x]="845" [y]="415"
+      [w]="330" [h]="125"
       [src]="items[2].hoverImage"
       alt="modalita_avanzata"
       class="hover-image" />

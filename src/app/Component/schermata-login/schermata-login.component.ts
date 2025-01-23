@@ -25,7 +25,7 @@ export class SchermataLoginComponent {
     email: "",
     username: "",
     password: "",
-    difficulty: "EASY"
+    difficulty: ""
 
   }
 }
