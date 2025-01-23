@@ -1,0 +1,26 @@
+<a routerLink="benvenuto">
+  <img posizione [x]="1026.5" [y]="60" [w]="148" [h]="55" [autore]="'R'" src="sfondi_schermate/register/bottone_avanti.png" alt="bottone_avanti"/>
+</a>
+<a routerLink="">
+  <img posizione [x]="370" [y]="59" [w]="63" [h]="57" [autore]="'R'" src="sfondi_schermate/register/x_button.png" alt="x_button" />
+</a>
+<span>
+  <input placeholder="Email" class="form-control mb-2 scontornato-input" posizione [x]="453" [y]="155" [w]="629" [h]="68" [autore]="'R'" [(ngModel)]="user!.email"><br>
+<!--  <input [(ngModel)]="user!.username"><br>-->
+<!--  <input [(ngModel)]="user!.password"><br>-->
+</span>
+<div class="image-container">
+  <div *ngFor="let item of items; let i = index"
+       (mouseenter)="onMouseEnter(i)"
+       (mouseleave)="onMouseLeave(i)">
+    <!-- Immagine di base -->
+    <img posizione [x]="item.baseX" [y]="item.baseY"
+         [w]="item.baseW" [h]="item.baseH" [autore]="'R'" [src]="item.baseImage"
+         alt="bottone_base" class="base-image" />
+
+    <!-- Immagine di hover -->
+    <img posizione [x]="item.hoverX" [y]="item.hoverY"
+         [w]="item.hoverW" [h]="item.hoverH" [autore]="'R'" [src]="item.hoverImage"
+         alt="modalita_hover" class="hover-image" *ngIf="item.isHovered" />
+  </div>
+</div>

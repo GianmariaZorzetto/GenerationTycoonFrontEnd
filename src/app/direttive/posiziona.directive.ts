@@ -14,7 +14,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   vostreDimensioni = {
     "M":[2560,1270],
     "F":[1915,945],
-    "D":[1904,911]
+    "D":[1904,911],
+    "R":[1535,695]
   };
   //w 353
   //h 309
