@@ -43,7 +43,7 @@
 
  <div class="image-container">
   <!-- Bottone "Facile" -->
-  <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)">
+  <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)" (click)="selectDifficulty('EASY')">
     <!-- Immagine del bottone -->
     <img
       posizione
@@ -65,7 +65,7 @@
   </div>
 
    <!-- Bottone "Intermedio" -->
-  <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)">
+  <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)" (click)="selectDifficulty('MEDIUM')">
     <!-- Immagine del bottone -->
     <img
       posizione
@@ -87,7 +87,7 @@
   </div>
 
    <!-- Bottone "Avanzato" -->
-  <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)">
+  <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)" (click)="selectDifficulty('HARD')">
     <!-- Immagine del bottone -->
     <img
       posizione

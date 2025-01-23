@@ -24,7 +24,8 @@ export class SchermataLoginComponent {
   user: UserDTOReq = {
     email: "",
     username: "",
-    password: ""
+    password: "",
+    difficulty: "EASY"
 
   }
 }

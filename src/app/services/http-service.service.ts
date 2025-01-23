@@ -13,6 +13,6 @@ export class HttpService {
 
   insertUser(dto:UserDTOReq): Observable<UserDTOCompleto>
   {
-    return this.http.post<UserDTOCompleto>("/api/user",dto);
+    return this.http.post<UserDTOCompleto>("/api/users/register",dto);
   }
 }
