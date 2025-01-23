@@ -1,0 +1,51 @@
+import {Component, OnInit} from '@angular/core';
+import {BackgroundService} from '../../../../services/background.service';
+import {RouterLink} from '@angular/router';
+import {PosizionaDirective} from '../../direttive/posiziona.directive';
+import {NgIf} from '@angular/common';
+
+@Component({
+  selector: 'app-schermata-boom',
+  imports: [
+    RouterLink,
+    PosizionaDirective,
+    NgIf
+  ],
+  templateUrl: './schermata-boom.component.html',
+  styleUrl: './schermata-boom.component.css'
+})
+export class SchermataBoomComponent implements OnInit
+{
+  image: string = "";
+  value: number = 0;
+  imageWithoutChat: boolean = false;
+  imageWithChat: boolean = false
+
+  constructor(private bg:BackgroundService)
+  {
+    this.bg.changeBackground(this.image)
+  }
+
+  randomNumberAndImage()
+  {
+    this.value = Math.floor(Math.random() * 10) + 1;
+
+    if (this.value % 2 === 0)
+    {
+      this.image = "boom/schermata_Boom1.png";
+      this.imageWithoutChat = true;
+      this.imageWithChat = false;
+    } else
+    {
+      this.image = "boom/schermata_Boom2.png";
+      this.imageWithoutChat = false;
+      this.imageWithChat = true;
+    }
+    this.bg.changeBackground(this.image)
+  }
+
+  ngOnInit(): void
+  {
+    this.randomNumberAndImage()
+  }
+}
