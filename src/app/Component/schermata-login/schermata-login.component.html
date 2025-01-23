@@ -1,16 +1,11 @@
-<div class="schermata-login-03">
-    <img class="sfondo-ufficiale" src="sfondo-ufficiale0.png" />
-    <div class="rectangle-989"></div>
-    <div class="frame-6">
-        <img class="x-circle" src="x-circle0.svg" />
-        <div class="login">Login</div>
-        <img class="rectangle-1062" src="rectangle-10620.svg" />
-        <div class="avanti">Avanti</div>
-    </div>
-    <div class="frame-7">
-        <div class="div">***********</div>
-    </div>
-    <div class="frame-62">
-        <div class="email">Email</div>
-    </div>
-</div>
+<input placeholder="Email" class="form-control mb-2 scontornato-input" posizione [x]="550" [y]="400" [w]="1630" [h]="150" [autore]="'D'" [(ngModel)]="user!.email"><br>
+
+<input placeholder="Password" class="form-control mb-2 scontornato-input" posizione [x]="550" [y]="540" [w]="1630" [h]="150" [autore]="'D'" [(ngModel)]="user!.password"><br>
+
+<a routerLink="benvenuto">
+  <img posizione [x]="1290" [y]="225" [w]="390" [h]="150" [autore]="'D'" src="sfondi_schermate/register/bottone_avanti.png" alt="bottone_avanti"/>
+</a>
+
+<a routerLink="">
+  <img posizione [x]="438" [y]="225" [w]="153" [h]="150" [autore]="'D'" src="sfondi_schermate/register/x_button.png" alt="x_button" />
+</a>
