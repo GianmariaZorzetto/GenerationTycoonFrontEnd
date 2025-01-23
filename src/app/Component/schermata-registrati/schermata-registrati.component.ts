@@ -32,21 +32,21 @@ export class SchermataRegistratiComponent
     {
       baseX: 440, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/facile_button.png',
-      hoverX: 382, hoverY: 440, hoverW: 300, hoverH: 118,
+      hoverX: 382, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_facile.png',
       isHovered: false
     },
     {
       baseX: 680, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/intermedio_button.png',
-      hoverX: 619, hoverY: 503, hoverW: 300, hoverH: 118,
+      hoverX: 619, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_intermedia.png',
       isHovered: false
     },
     {
       baseX: 920, baseY: 531, baseW: 173, baseH: 47,
       baseImage: 'sfondi_schermate/register/avanzato_button.png',
-      hoverX: 853, hoverY: 503, hoverW: 300, hoverH: 118,
+      hoverX: 853, hoverY: 415, hoverW: 300, hoverH: 118,
       hoverImage: 'sfondi_schermate/register/modalita_avanzata.png',
       isHovered: false
     }
