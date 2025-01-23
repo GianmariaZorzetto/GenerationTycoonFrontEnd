@@ -13,7 +13,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @Input() autore: string = "M";
   vostreDimensioni = {
     "M":[2560,1270],
-    "F":[1915,945]
+    "F":[1915,945],
+    "D":[1904,911]
   };
   //w 353
   //h 309

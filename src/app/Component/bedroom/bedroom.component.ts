@@ -13,19 +13,17 @@ import {PosizionaDirective} from '../../direttive/posiziona.directive';
 })
 export class BedroomComponent {
 
-  isHovered: boolean = false;
-  image: string ="";
+  isHovered: string | false = false;
 
-  onMouseEnter(): void {
-    this.isHovered = true;  // Il mouse è sopra il bottone
+  onMouseEnter(imageName: string): void {
+    this.isHovered = imageName;
   }
 
   onMouseLeave(): void {
-    this.isHovered = false;  // Il mouse lascia il bottone
+    this.isHovered = false;
   }
 
-  constructor(private bg:BackgroundService) {
-    this.bg.changeBackground("stanza/cameretta.png")
+  constructor(private bg: BackgroundService) {
+    this.bg.changeBackground("stanza/cameretta.png");
   }
-
 }
