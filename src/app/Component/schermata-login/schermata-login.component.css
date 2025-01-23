@@ -138,7 +138,6 @@
   padding: 12px 20px; /* Padding più ampio per un look più morbido */
   background-color: rgba(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
   font-size: 16px; /* Adatta la dimensione del testo */
-  transition: all 0.3s ease; /* Effetto di transizione al focus */
 
   /* Centrare il testo del placeholder */
   text-align: center; /* Centra il testo orizzontalmente */
