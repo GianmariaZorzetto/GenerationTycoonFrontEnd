@@ -1,0 +1,133 @@
+
+.rectangle-989 {
+    background: rgba(235, 176, 132, 0.6);
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #292929;
+    border-width: 10px;
+    width: 1778px;
+    height: 798px;
+    position: absolute;
+    left: 546px;
+    top: 318px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.frame-6 {
+    background: rgba(221, 238, 255, 0.71);
+    border-radius: 50px 50px 0px 0px;
+    border-style: solid;
+    border-color: #292929;
+    border-width: 10px;
+    width: 1778px;
+    height: 190px;
+    position: absolute;
+    left: 546px;
+    top: 318px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.x-circle {
+    width: 135px;
+    height: 122px;
+    position: absolute;
+    left: 65px;
+    top: 34px;
+    overflow: visible;
+}
+.login {
+    color: #464646;
+    text-align: center;
+    font-family: "Inter-BlackItalic", sans-serif;
+    font-size: 128px;
+    line-height: 140%;
+    font-weight: 900;
+    font-style: italic;
+    position: absolute;
+    left: 361px;
+    top: 6px;
+    width: 1059px;
+    height: 124px;
+}
+.rectangle-1062 {
+    border-radius: 0px;
+    opacity: 0.5;
+    width: 309px;
+    height: 112px;
+    position: absolute;
+    left: 1423px;
+    top: 40px;
+    overflow: visible;
+}
+.avanti {
+    color: #464646;
+    text-align: left;
+    font-family: "Inter-BlackItalic", sans-serif;
+    font-size: 64px;
+    line-height: 140%;
+    font-weight: 900;
+    font-style: italic;
+    opacity: 0.5;
+    position: absolute;
+    left: calc(50% - -584px);
+    top: 55px;
+}
+.frame-7 {
+    background: rgba(221, 238, 255, 0.71);
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    opacity: 0.5;
+    width: 1300px;
+    height: 130px;
+    position: absolute;
+    left: 785px;
+    top: 847px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.div {
+    color: #464646;
+    text-align: left;
+    font-family: "Inter-BlackItalic", sans-serif;
+    font-size: 64px;
+    line-height: 140%;
+    font-weight: 900;
+    font-style: italic;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 24px;
+    width: 934px;
+    height: 81px;
+}
+.frame-62 {
+    background: rgba(221, 238, 255, 0.71);
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    opacity: 0.5;
+    width: 1300px;
+    height: 130px;
+    position: absolute;
+    left: 785px;
+    top: 622px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.email {
+    color: #464646;
+    text-align: left;
+    font-family: "Inter-BlackItalic", sans-serif;
+    font-size: 64px;
+    line-height: 140%;
+    font-weight: 900;
+    font-style: italic;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 24px;
+    width: 184px;
+    height: 81px;
+}

@@ -19,4 +19,12 @@ export class SchermataInizialeComponent
     this.service.changeBackground("login/background_Final.png")
   }
 
+  email: string = '';
+  password: string = '';
+
+  onSubmit(): void {
+    console.log('Email:', this.email);
+    console.log('Password:', this.password);
+  }
+
 }
