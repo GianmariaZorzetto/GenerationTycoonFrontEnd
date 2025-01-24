@@ -75,6 +75,17 @@ export class SchermataRegistratiComponent {
     // Chiamata al servizio HTTP per salvare l"utente
     this.httpService.insertUser(this.user).subscribe((registrationRes) => {
       this.httpService.userLoginReqDto = registrationRes
+      switch (registrationRes.difficulty) {
+        case "EASY":
+          this.httpService.vita = 3
+          break;
+        case "MEDIUM":
+          this.httpService.vita = 2
+          break;
+        case "HARD":
+          this.httpService.vita = 1
+          break;
+      }
       this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
     });
   }
