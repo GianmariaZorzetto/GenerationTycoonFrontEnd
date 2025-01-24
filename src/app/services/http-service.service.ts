@@ -6,7 +6,6 @@ import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
-import * as console from 'node:console';
 import {UserScoreDTOReq} from '../model/UserScoreDTOReq';
 import {UserScoreDTOResp} from '../model/UserScoreDTOResp';
 
