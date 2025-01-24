@@ -6,6 +6,8 @@ import {UserLeaderboardDTOReq} from '../model/UserLeaderboardDTOReq';
 import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import * as console from 'node:console';
+import {KaboomDTOResp} from '../model/KaboomDTOResp';
+import {BrainjDTOResp} from '../model/BrainjDTOResp';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,15 @@ export class HttpService {
     return this._vita == 0
   }
 
+  mangiaNoodle() {
+    if (this._noodleOk < 1) return;
+    this._noodleOk -= 1;
+  }
+
+  haiNoodle(): boolean {
+    return this._noodleOk == 1;
+  }
+
   set userLoginReqDto(value: UserLoginDTOResp) {
     this._userLoginReqDto = value;
     console.log(this._userLoginReqDto.token)
@@ -35,6 +46,9 @@ export class HttpService {
 
   private _userLoginReqDto: UserLoginDTOResp;
   private _vita: number;
+  private _noodleOk = 1;
+  private _kabooms: KaboomDTOResp[] = []
+  private _brainjs: BrainjDTOResp[] = []
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
@@ -49,6 +63,22 @@ export class HttpService {
 
   login(dto: UserDTOLoginReq): Observable<UserLoginDTOResp> {
     return this.http.post<UserLoginDTOResp>("/api/users/login", dto)
+  }
+
+  prendiKabooms() {
+    // TODO PRENDI TUTTI I KABOOMS
+  }
+
+  prendiBrainjs() {
+    // TODO PRENDI TUTTI I BRAINJ
+  }
+
+  prendiBrainj(): BrainjDTOResp {
+    // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
+  }
+
+  prendiKaboom(): KaboomDTOResp {
+    // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
   }
 
   // getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {

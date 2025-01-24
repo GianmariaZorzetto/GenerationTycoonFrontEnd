@@ -34,6 +34,7 @@ export class SchermataLoginComponent {
   loginUser() {
     this.httpService.login(this.user).subscribe((res) => {
       this.httpService.userLoginReqDto = res;
+      this.httpService.mangiaNoodle()
       this.route.navigate(["/bedroom"])
     })
   }
