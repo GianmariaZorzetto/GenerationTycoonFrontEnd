@@ -7,7 +7,6 @@ import {RouterLink} from '@angular/router';
 @Component({
   selector: 'app-schermata-brainj',
   imports: [
-    NgIf,
     PosizionaDirective,
     RouterLink
   ],
