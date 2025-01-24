@@ -22,4 +22,12 @@ export class HttpService {
   {
     return this.http.post<UserLoginDTOResp>("/api/users/login", dto)
   }
+
+  // getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {
+  //   return this.http.post<UserLoginDTOResp>("/api/users/login",dto);
+  // }
+
+
+
+
 }
