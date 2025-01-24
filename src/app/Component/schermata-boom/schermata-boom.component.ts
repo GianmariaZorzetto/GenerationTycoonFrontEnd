@@ -34,13 +34,13 @@ export class SchermataBoomComponent implements OnInit
 
     if (this.value % 2 === 0)
     {
-      this.image = "boom/schermata_boom1_Final.png";
+      this.image = "boom/schermata_boom1_Final.png"; // da sostituire con textbox
       this.imageWithoutChat = true;
       this.imageWithChat = false;
       this.flag = false;
     } else
     {
-      this.image = "boom/schermata_boom2_final.png";
+      this.image = "boom/boomEtextBox2.png";
       this.imageWithoutChat = false;
       this.imageWithChat = true;
       this.flag = true;

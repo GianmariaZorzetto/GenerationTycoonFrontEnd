@@ -34,4 +34,12 @@ export class HttpService {
   login(dto: UserDTOLoginReq): Observable<UserLoginDTOResp> {
     return this.http.post<UserLoginDTOResp>("/api/users/login", dto)
   }
+
+  // getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {
+  //   return this.http.post<UserLoginDTOResp>("/api/users/login",dto);
+  // }
+
+
+
+
 }
