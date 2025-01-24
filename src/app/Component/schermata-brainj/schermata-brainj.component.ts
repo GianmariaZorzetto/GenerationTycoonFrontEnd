@@ -26,7 +26,7 @@ export class SchermataBrainjComponent
   @HostListener('window:message', ['$event'])
   onMessage(event: MessageEvent<any>)
   {
-    if(event.origin === 'https://onecompiler.com/api/code/exec') {
+    if(event.origin === 'https://onecompiler.com') {
       console.log("L'output dell'Iframe é: ", event.data.result?.output);
 
       this.outputData = event.data.result?.output;
