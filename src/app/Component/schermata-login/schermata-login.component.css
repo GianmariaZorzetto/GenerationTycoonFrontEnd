@@ -1,143 +1,33 @@
+.image-container img {
+  transition: opacity 0.3s ease;
+}
+.base-image {
+  display: block;
+}
 
-.rectangle-989 {
-    background: rgba(235, 176, 132, 0.6);
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #292929;
-    border-width: 10px;
-    width: 1778px;
-    height: 798px;
-    position: absolute;
-    left: 546px;
-    top: 318px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.hover-image {
+  opacity: 0;
 }
-.frame-6 {
-    background: rgba(221, 238, 255, 0.71);
-    border-radius: 50px 50px 0px 0px;
-    border-style: solid;
-    border-color: #292929;
-    border-width: 10px;
-    width: 1778px;
-    height: 190px;
-    position: absolute;
-    left: 546px;
-    top: 318px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+
+.image-container:hover .hover-image {
+  opacity: 1;
 }
-.x-circle {
-    width: 135px;
-    height: 122px;
-    position: absolute;
-    left: 65px;
-    top: 34px;
-    overflow: visible;
+
+.image-container:hover .base-image {
+  opacity: 50%;
 }
-.login {
-    color: #464646;
-    text-align: center;
-    font-family: "Inter-BlackItalic", sans-serif;
-    font-size: 128px;
-    line-height: 140%;
-    font-weight: 900;
-    font-style: italic;
-    position: absolute;
-    left: 361px;
-    top: 6px;
-    width: 1059px;
-    height: 124px;
+
+a img {
+  display: block;
 }
-.rectangle-1062 {
-    border-radius: 0px;
-    opacity: 0.5;
-    width: 309px;
-    height: 112px;
-    position: absolute;
-    left: 1423px;
-    top: 40px;
-    overflow: visible;
-}
-.avanti {
-    color: #464646;
-    text-align: left;
-    font-family: "Inter-BlackItalic", sans-serif;
-    font-size: 64px;
-    line-height: 140%;
-    font-weight: 900;
-    font-style: italic;
-    opacity: 0.5;
-    position: absolute;
-    left: calc(50% - -584px);
-    top: 55px;
-}
-.frame-7 {
-    background: rgba(221, 238, 255, 0.71);
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 1px;
-    opacity: 0.5;
-    width: 1300px;
-    height: 130px;
-    position: absolute;
-    left: 785px;
-    top: 847px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-.div {
-    color: #464646;
-    text-align: left;
-    font-family: "Inter-BlackItalic", sans-serif;
-    font-size: 64px;
-    line-height: 140%;
-    font-weight: 900;
-    font-style: italic;
-    position: absolute;
-    left: 50%;
-    translate: -50%;
-    top: 24px;
-    width: 934px;
-    height: 81px;
-}
-.frame-62 {
-    background: rgba(221, 238, 255, 0.71);
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 1px;
-    opacity: 0.5;
-    width: 1300px;
-    height: 130px;
-    position: absolute;
-    left: 785px;
-    top: 622px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-.email {
-    color: #464646;
-    text-align: left;
-    font-family: "Inter-BlackItalic", sans-serif;
-    font-size: 64px;
-    line-height: 140%;
-    font-weight: 900;
-    font-style: italic;
-    position: absolute;
-    left: 50%;
-    translate: -50%;
-    top: 24px;
-    width: 184px;
-    height: 81px;
-}
+
 /* SCSS per input scontornato */
 .scontornato-input {
-  border: 1px solid #ccc; /* Bordo sottile, colore chiaro */
+  border: 1px solid #000000; /* Bordo sottile, colore chiaro */
   border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
   padding: 12px 20px; /* Padding più ampio per un look più morbido */
-  background-color: rgba(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
-  font-size: 16px; /* Adatta la dimensione del testo */
+  background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
+  font-size: 30px; /* Adatta la dimensione del testo */
 
   /* Centrare il testo del placeholder */
   text-align: center; /* Centra il testo orizzontalmente */
@@ -154,4 +44,46 @@
   border-color: #64b5f6; /* Colore di focus più chiaro */
   outline: none; /* Rimuove il contorno predefinito */
   box-shadow: 0 0 8px rgba(100, 181, 246, 0.5); /* Aggiungi un'ombra leggera */
+}
+
+.transparent-button {
+  background-color: transparent; /* Imposta lo sfondo trasparente */
+  border: none; /* Rimuove il bordo */
+  padding: 0; /* Rimuove eventuali spazi interni */
+  cursor: pointer; /* Cambia il cursore per far capire che è cliccabile */
+}
+.base-image {
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+}
+
+.hover-image {
+  position: absolute; /* Puoi usare il positioning assoluto per sovrapporre le immagini */
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+  display: none; /* L'hover non è visibile finché il mouse non è sopra */
+}
+
+.base-image:hover {
+  transform: scale(1.2); /* Ingrandisce l'immagine base quando hover */
+}
+
+.image-container .hover-image {
+  display: block; /* Mostra l'immagine hover quando l'utente ci passa sopra */
+}
+
+.image-container .base-image:hover + .hover-image {
+  display: block; /* Mostra l'immagine hover quando il mouse è sopra la base */
+}
+
+.selected {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per dare l'effetto "premuto" */
+}
+
+.selected .base-image {
+  opacity: 0.5; /* Riduci l'opacità dell'immagine base quando selezionato */
+}
+
+.selected .hover-image {
+  opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
 }

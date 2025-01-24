@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
@@ -18,8 +18,10 @@ import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 })
 export class SchermataLoginComponent {
   constructor(private backgroundService: BackgroundService) {
-    this.backgroundService.changeBackground("login/Sfondo_login_reference.png")
+    this.backgroundService.changeBackground("login/Sfondo_login.png")
   }
+
+  showPassword = true;
 
   user: UserRegistrationDTOReq = {
     email: "",
