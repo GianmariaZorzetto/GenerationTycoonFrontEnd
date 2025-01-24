@@ -10,6 +10,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './schermata-brainj.component.html',
+  standalone: true,
   styleUrl: './schermata-brainj.component.css'
 })
 export class SchermataBrainjComponent
