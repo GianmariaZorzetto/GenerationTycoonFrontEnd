@@ -26,6 +26,7 @@ import {SchermataBenvenutoComponent} from './Component/schermata-benvenuto/scher
 import {SchermataGraduationComponent} from './Component/schermata-graduation/schermata-graduation.component';
 import {SchermataLoseComponent} from './Component/schermata-lose/schermata-lose.component';
 import {SchermataKaboomComponent} from './Component/schermata-kaboom/schermata-kaboom.component';
+import {SchermataDifficoltaComponent} from './Component/schermata-difficolta/schermata-difficolta.component';
 
 
 export const routes: Routes = [
@@ -44,6 +45,7 @@ export const routes: Routes = [
   {path: 'graduation', component: SchermataGraduationComponent},
   {path: 'lose', component: SchermataLoseComponent},
   {path: 'kaboom', component: SchermataKaboomComponent},
+  {path: 'difficolta', component: SchermataDifficoltaComponent},
 
 ];
 
