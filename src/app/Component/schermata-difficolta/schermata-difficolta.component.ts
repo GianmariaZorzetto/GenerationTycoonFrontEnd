@@ -79,7 +79,7 @@ export class SchermataDifficoltaComponent {
   saveUser() {
     console.log("Utente creato:", this.user);
     // Chiamata al servizio HTTP per salvare l"utente
-    this.httpService.insertUser(this.user).subscribe(() => {
+    this.httpService.register(this.user).subscribe(() => {
       this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
     });
   }
