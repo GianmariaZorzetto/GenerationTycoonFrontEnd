@@ -6,6 +6,8 @@ import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
+import {UserScoreDTOReq} from '../model/UserScoreDTOReq';
+import {UserScoreDTOResp} from '../model/UserScoreDTOResp';
 
 @Injectable({
   providedIn: 'root'
