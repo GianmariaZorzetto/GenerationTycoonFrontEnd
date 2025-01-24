@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {BackgroundService} from '../../../../services/background.service';
+import {HttpService} from '../../services/http-service.service';
 
 @Component({
   selector: 'app-schermata-brainj-risultato',
@@ -15,8 +16,7 @@ import {BackgroundService} from '../../../../services/background.service';
 })
 export class SchermataBrainjRisultatoComponent {
 
-  constructor(private bg:BackgroundService)
-  {
+  constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
     this.bg.changeBackground("punteggio/BrainJ_punteggio.png")
   }
 

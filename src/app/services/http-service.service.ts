@@ -6,11 +6,22 @@ import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
+import * as console from 'node:console';
+import {UserScoreDTOReq} from '../model/UserScoreDTOReq';
+import {UserScoreDTOResp} from '../model/UserScoreDTOResp';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+  get quizResult(): { result: boolean; score: number } {
+    return this._quizResult;
+  }
+
+  set quizResult(value: { result: boolean; score: number }) {
+    this._quizResult = value;
+  }
+
   get numberOfQuiz() {
     return this._numberOfQuiz;
   }
@@ -57,6 +68,7 @@ export class HttpService {
   private _noodleOk;
   private _kabooms: KaboomDTOResp[];
   private _brainjs: BrainjDTOResp[];
+  private _quizResult: { result: boolean, score: number }
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
@@ -67,6 +79,7 @@ export class HttpService {
     this._kabooms = [];
     this._brainjs = [];
     this._numberOfQuiz = 10;
+    this._quizResult = {result: false, score: 0}
   }
 
   register(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
@@ -106,6 +119,10 @@ export class HttpService {
 
   getSingleKaboom(): KaboomDTOResp {
     return this._kabooms[this.generateRandomNumber(this._kabooms.length)]
+  }
+
+  calculateScore(dto: UserScoreDTOReq): Observable<UserScoreDTOResp> {
+    return this.http.post<UserScoreDTOResp>("/api/users/score", dto)
   }
 
   private generateRandomNumber(size: number): number {
