@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
-import {NgIf} from '@angular/common';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {RouterLink} from '@angular/router';
 import {BrainjDTOResp} from '../../model/BrainjDTOResp';
@@ -20,13 +19,33 @@ export class SchermataBrainj_dinamicaComponent {
 
   brainj: BrainjDTOResp
 
-  // dataDiInizio : Date
+  dataDiInizio: Date
+
+  solution: string
 
   constructor(private bg: BackgroundService, private httpService: HttpService) {
     this.bg.changeBackground("brainj/brainj_theme_final.png")
-    this.brainj = httpService.prendiBrainj();
-    // this.dataDiInizio = Dat e adesso
+    this.brainj = this.httpService.prendiBrainj();
+    console.log(this.brainj)
+    this.dataDiInizio = new Date()
+    console.log(this.dataDiInizio)
+    this.solution = ""
   }
 
+  @HostListener('window:message', ['$event'])
+  onMessage(event: MessageEvent<any>) {
+    if (event.origin === 'https://onecompiler.com') {
+      this.solution = event.data.result?.output;
+    }
+  }
 
+  checkAnswer() {
+    if (this.solution === this.brainj.answer) {
+      // TODO INVIO RICHIESTA PUNTEGGIo
+      console.log("HAI FATTO GIUSTO")
+    } else {
+      // TODO TOGLI VITA
+      console.log("HAI FATTO SBAGLIATO")
+    }
+  }
 }

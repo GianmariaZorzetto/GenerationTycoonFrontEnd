@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, tap} from 'rxjs';
 import {UserRegistrationDTOReq} from '../model/UserRegistrationDTOReq';
 import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
@@ -56,29 +56,39 @@ export class HttpService {
   }
 
   insertUser(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
-    return this.http.post<UserLoginDTOResp>("/api/users/register", dto);
+    return this.http.post<UserLoginDTOResp>("/api/users/register", dto).pipe(tap((res) => {
+      this.userLoginReqDto = res
+    }));
   }
 
   login(dto: UserDTOLoginReq): Observable<UserLoginDTOResp> {
-    return this.http.post<UserLoginDTOResp>("/api/users/login", dto)
+    return this.http.post<UserLoginDTOResp>("/api/users/login", dto).pipe(tap((res) => {
+      this.userLoginReqDto = res
+    }));
   }
 
   prendiKabooms() {
-    // TODO PRENDI TUTTI I KABOOMS
+    this.http.get<KaboomDTOResp[]>("/api/kabooms").subscribe(res => {
+      this._kabooms = res
+      console.log(this._kabooms)
+    })
   }
 
   prendiBrainjs() {
-    // TODO PRENDI TUTTI I BRAINJ
+    this.http.get<BrainjDTOResp[]>("/api/brainjs").subscribe(res => {
+      this._brainjs = res
+      console.log(this._brainjs)
+    })
   }
 
   prendiBrainj(): BrainjDTOResp {
     //   // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
-    return {answer: '', question: ''}
+    return this._brainjs[0]
   }
 
   prendiKaboom(): KaboomDTOResp {
     // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
-    return {answer1: "", answer2: "", answer3: "", answer4: "", correctColor: "", question: ""}
+    return this._kabooms[0]
   }
 
   getUserInfoLogin(dto: UserLoginDTOResp): Observable<UserLoginDTOResp> {
