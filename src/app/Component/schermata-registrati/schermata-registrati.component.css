@@ -34,7 +34,7 @@ a img {
 }
 
 .scontornato-input::placeholder {
-  font-size: 45px;
+  font-size: 70%;
   font-family: sans-serif;/* Aumenta la dimensione del font del placeholder */
   color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
   text-align: center; /* Centra il testo del placeholder anche in verticale */
