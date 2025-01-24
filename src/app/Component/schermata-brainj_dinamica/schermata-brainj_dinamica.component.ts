@@ -26,7 +26,6 @@ export class SchermataBrainj_dinamicaComponent {
   constructor(private bg: BackgroundService, private httpService: HttpService) {
     this.bg.changeBackground("brainj/brainj_theme_final.png")
     this.brainj = this.httpService.getSingleBrainj();
-    console.log(this.brainj)
     this.dataDiInizio = new Date()
     console.log(this.dataDiInizio)
     this.solution = ""

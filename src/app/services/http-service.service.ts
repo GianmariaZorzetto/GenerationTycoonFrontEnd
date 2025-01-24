@@ -6,7 +6,6 @@ import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
-import * as console from 'node:console';
 
 @Injectable({
   providedIn: 'root'
@@ -70,7 +69,7 @@ export class HttpService {
     this._numberOfQuiz = 10;
   }
 
-  insertUser(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
+  register(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
     return this.http.post<UserLoginDTOResp>("/api/users/register", dto).pipe(tap((res) => {
       this.userLoginReqDto = res
     }));
@@ -97,13 +96,21 @@ export class HttpService {
   }
 
   getSingleBrainj(): BrainjDTOResp {
-    //   // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
-    return this._brainjs[0]
+    console.log(this._brainjs.length)
+    let index = this.generateRandomNumber(this._brainjs.length);
+    let ret = this._brainjs[index]
+    this._brainjs.splice(index, 1)
+    console.log(this._brainjs.length)
+    return ret
   }
 
   getSingleKaboom(): KaboomDTOResp {
-    // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
-    return this._kabooms[0]
+    return this._kabooms[this.generateRandomNumber(this._kabooms.length)]
+  }
+
+  private generateRandomNumber(size: number): number {
+    const randomNumber = Math.random();
+    return Math.floor(randomNumber * size - 1)
   }
 
 }
