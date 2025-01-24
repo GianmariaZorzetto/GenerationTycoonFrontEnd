@@ -1,0 +1,62 @@
+/* Stile per il contenitore della domanda */
+.question-box {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.8); /* Bianco semi-trasparente */
+  color: #333;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  margin-bottom: 30px; /* Distanza dalla griglia di risposte */
+}
+
+/* Contenitore per i bottoni delle risposte */
+.answers-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 colonne */
+  gap: 100px; /* Spaziatura tra i bottoni */
+  width: 20%;
+  margin: 0 auto;
+}
+
+/* Stile per i bottoni */
+.answer-button {
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1px;
+}
+
+.answer-button:nth-child(1) {
+  background-color: #960056; /* Rosso */
+}
+
+.answer-button:nth-child(2) {
+  background-color: #0957A2; /* Blu */
+}
+
+.answer-button:nth-child(3) {
+  background-color: #C07402; /* Arancione */
+}
+
+.answer-button:nth-child(4) {
+  background-color: #007263; /* Verde */
+}
+
+.scontornato-input {
+  border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
+  padding: 12px 20px; /* Padding più ampio per un look più morbido */
+  background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
+  font-size: 30px; /* Adatta la dimensione del testo */
+
+  /* Centrare il testo del placeholder */
+  text-align: center; /* Centra il testo orizzontalmente */
+}
+
+/* Rimuovi margini del body per allineamento perfetto */
+body {
+  margin: 0;
+  padding: 0;
+}
