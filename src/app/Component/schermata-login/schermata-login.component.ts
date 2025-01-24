@@ -4,13 +4,15 @@ import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {FormsModule} from '@angular/forms';
 import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-schermata-login',
   imports: [
     RouterLink,
     PosizionaDirective,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './schermata-login.component.html',
   standalone: true,
