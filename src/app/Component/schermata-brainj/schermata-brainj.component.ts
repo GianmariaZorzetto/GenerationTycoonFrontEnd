@@ -16,7 +16,7 @@ export class SchermataBrainjComponent
 {
   outputData: string = "";
 
-  mockAnswer: string = "10"
+  mockAnswer: string = "10\n"
 
   constructor(private bg: BackgroundService)
   {
@@ -26,7 +26,7 @@ export class SchermataBrainjComponent
   @HostListener('window:message', ['$event'])
   onMessage(event: MessageEvent<any>)
   {
-    if(event.origin === 'https://onecompiler.com') {
+    if(event.origin === 'https://onecompiler.com/api/code/exec') {
       console.log("L'output dell'Iframe é: ", event.data.result?.output);
 
       this.outputData = event.data.result?.output;

@@ -2,10 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UserRegistrationDTOReq} from '../model/UserRegistrationDTOReq';
-import {UserLeaderboardDTOReq} from '../model/UserLeaderboardDTOReq';
 import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
-import * as console from 'node:console';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
 
@@ -74,15 +72,17 @@ export class HttpService {
   }
 
   prendiBrainj(): BrainjDTOResp {
-    // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
+    //   // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
+    return {answer: '', question: ''}
   }
 
   prendiKaboom(): KaboomDTOResp {
     // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
+    return {answer1: "", answer2: "", answer3: "", answer4: "", correctColor: "", question: ""}
   }
 
-  getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {
-    return this.http.post<UserLoginDTOResp>("/api/users/login",dto);
+  getUserInfoLogin(dto: UserLoginDTOResp): Observable<UserLoginDTOResp> {
+    return this.http.post<UserLoginDTOResp>("/api/users/login", dto);
   }
 
 
