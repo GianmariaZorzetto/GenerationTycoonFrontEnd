@@ -20,40 +20,19 @@ a img {
   transition: opacity 0.3s ease;
 }
 
-.password-hint-box {
-  background-color: rgb(221, 238, 255, 0.91); /* Sfondo bianco */
-  color: #000000; /* Testo nero */
-  border: 1px solid #ccc; /* Bordo grigio sottile */
-  border-radius: 8px; /* Angoli arrotondati */
-  padding: 16px; /* Spaziatura interna */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto popup */
-  font-size: 14px; /* Dimensione del testo */
-  z-index: 1000; /* Assicura che sia sopra gli altri elementi */
-}
-
-
-.password-hint-box ul {
-  margin: 0;
-  padding-left: 20px; /* Indenta la lista */
-}
-
-.password-hint-box li {
-  margin-bottom: 4px; /* Spazio tra gli elementi della lista */
-}
-
 /* SCSS per input scontornato */
 .scontornato-input {
   border: 1px solid #000000; /* Bordo sottile, colore chiaro */
   border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
   padding: 12px 20px; /* Padding più ampio per un look più morbido */
   background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
-  font-size: 30px; /* Adatta la dimensione del testo */
-
+  font-size: 140%; /* Adatta la dimensione del testo */
+  color: #464646;
   /* Centrare il testo del placeholder */
   text-align: center; /* Centra il testo orizzontalmente */
 }
 .scontornato-input::placeholder {
-  font-size: 100%;
+  font-size: 140%;
   font-family: sans-serif;/* Aumenta la dimensione del font del placeholder */
   color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
   text-align: center; /* Centra il testo del placeholder anche in verticale */
