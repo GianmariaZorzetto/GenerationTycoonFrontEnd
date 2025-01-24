@@ -1,5 +1,9 @@
 <a routerLink="/desktop">
-  <img posizione [x]="1755" [hoverabile]="true" [y]="35" [w]="18" [h]="18" [autore]="'F'" [centroMassa]="true"
+  <img *ngIf="flag" posizione [x]="1754" [hoverabile]="true" [y]="33" [w]="18" [h]="18" [autore]="'F'" [centroMassa]="true"
+       class="cross-group close_button"
+       src="sfondi_schermate/boom/cross-group.svg"
+  />
+  <img *ngIf="!flag" posizione [x]="1753" [hoverabile]="true" [y]="35" [w]="18" [h]="18" [autore]="'F'" [centroMassa]="true"
        class="cross-group close_button"
        src="sfondi_schermate/boom/cross-group.svg"
   />
