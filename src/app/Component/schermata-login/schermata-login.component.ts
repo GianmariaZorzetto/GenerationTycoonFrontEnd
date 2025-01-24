@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {FormsModule} from '@angular/forms';
-import {UserDTOReq} from '../../model/UserDTOReq';
+import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 
 @Component({
   selector: 'app-schermata-login',
