@@ -81,9 +81,9 @@ export class HttpService {
     // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
   }
 
-  // getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {
-  //   return this.http.post<UserLoginDTOResp>("/api/users/login",dto);
-  // }
+  getUserInfoLogin(dto:UserLoginDTOResp): Observable<UserLoginDTOResp> {
+    return this.http.post<UserLoginDTOResp>("/api/users/login",dto);
+  }
 
 
 }

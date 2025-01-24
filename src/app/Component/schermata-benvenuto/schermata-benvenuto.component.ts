@@ -17,6 +17,6 @@ export class SchermataBenvenutoComponent {
 
   //cambiare immagine di sfondo, dimensioni diverse (vedi figma)
   constructor(private bg:BackgroundService) {
-    this.bg.changeBackground("benvenuto/benvenuto.png")
+    this.bg.changeBackground("benvenuto/benvenutoFinal.png")
   }
 }
