@@ -1,9 +1,7 @@
-export interface UserDTOCompleto
+export interface UserRegistrationDTOReq
 {
-  id:number;
   email:string;
   username:string;
   password:string;
   difficulty:string;
-  score:number;
 }
