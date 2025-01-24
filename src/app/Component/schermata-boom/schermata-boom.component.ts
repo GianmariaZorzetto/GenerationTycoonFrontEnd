@@ -20,6 +20,7 @@ export class SchermataBoomComponent implements OnInit
   value: number = 0;
   imageWithoutChat: boolean = false;
   imageWithChat: boolean = false
+  flag: boolean = false;
 
   constructor(private bg:BackgroundService)
   {
@@ -32,14 +33,16 @@ export class SchermataBoomComponent implements OnInit
 
     if (this.value % 2 === 0)
     {
-      this.image = "boom/schermata_Boom1.png";
+      this.image = "boom/schermata_boom1_Final.png";
       this.imageWithoutChat = true;
       this.imageWithChat = false;
+      this.flag = false;
     } else
     {
-      this.image = "boom/schermata_Boom2.png";
+      this.image = "boom/schermata_boom2_final.png";
       this.imageWithoutChat = false;
       this.imageWithChat = true;
+      this.flag = true;
     }
     this.bg.changeBackground(this.image)
   }
