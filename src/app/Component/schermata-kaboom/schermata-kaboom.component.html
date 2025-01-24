@@ -1,39 +1,34 @@
 <a routerLink="/desktop">
   <img
     posizione
-    [x]="1756"
+    [x]="1753.6"
     [y]="35"
-    [w]="22"
-    [h]="22"
+    [w]="18"
+    [h]="18"
     [autore]="'F'"
     [centroMassa]="true"
     [hoverabile]="true"
     src="/sfondi_schermate/boom/cross-group.svg" alt="button">
 </a>
-<a routerLink="/desktop">
-  <img
-    posizione
-    [x]="1734"
-    [y]="104"
-    [w]="59"
-    [h]="25"
-    [autore]="'F'"
-    [centroMassa]="true"
-    [hoverabile]="true"
-    [mFactor]="1.10"
-    src="/sfondi_schermate/kaboom/continue_button.svg" alt="button">
-</a>
+
+<div class="kaboom-hint-box"
+     posizione [x]="1665" [y]="157" [w]="213" [h]="140" [centroMassa]="true" [autore]="'N'">
+  <p>Questo è solo un Kaboom di prova, torna alla schermata Boom per ricevere una task da Stefano-San!</p>
+</div>
+
+
+
 <div class="container d-flex flex-column align-items-center vh-100">
   <!-- Blocco per la domanda -->
   <div posizione [x]="465" [y]="87" [w]="970" [h]="128" [autore]="'N'" class="question-box mb-5 text-center">
-    DOMANDA DA INSERIRE!
+    Ti stai divertendo con questo gioco?
   </div>
 
 <!--  &lt;!&ndash; Contenitore per i bottoni delle risposte &ndash;&gt;-->
   <div class="answers-grid">
-    <button posizione [x]="560" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input" style="background-color: #960056;">Inserire qui la risposta uno</button>
-    <button posizione [x]="1380" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input" style="background-color: #0957A2;">Inserire qui la risposta due</button>
-    <button posizione [x]="560" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input" style="background-color: #C07402;">Inserire qui la risposta quattro</button>
-    <button posizione [x]="1380" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input" style="background-color: #007263;">Inserire qui la risposta tre</button>
+    <button posizione [x]="560" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input" style="background-color: #960056;">Attento, la risposta giusta è la blu!</button>
+    <button posizione [x]="1380" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input" style="background-color: #0957A2;">Hmm, la risposta esatta è la gialla!</button>
+    <button posizione [x]="560" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input" style="background-color: #C07402;">Decisamente! (Spoiler: questa è la risposta corretta)</button>
+    <button posizione [x]="1380" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input" style="background-color: #007263;">La risposta giusta è sicuramente la rossa!</button>
   </div>
 </div>
