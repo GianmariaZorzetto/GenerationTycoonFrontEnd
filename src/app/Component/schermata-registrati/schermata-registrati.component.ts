@@ -4,18 +4,21 @@ import { BackgroundService } from "../../../../services/background.service";
 import { FormsModule } from "@angular/forms";
 import { UserRegistrationDTOReq } from "../../model/UserRegistrationDTOReq";
 import { PosizionaDirective } from "../../direttive/posiziona.directive";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
 
 
 @Component({
   selector: "app-schermata-registrati",
-  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink, NgClass],
+  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink, NgClass, NgStyle],
   templateUrl: "./schermata-registrati.component.html",
   standalone: true,
   styleUrls: ["./schermata-registrati.component.css"]
 })
 export class SchermataRegistratiComponent {
+
+
+
   showPassword = true;
 
   user: UserRegistrationDTOReq = {

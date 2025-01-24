@@ -1,24 +1,22 @@
-.image-container img {
-  transition: opacity 0.3s ease;
+a img {
+  display: block;
 }
+
 .base-image {
   display: block;
+  opacity: 50%;
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+}
+.base-image:hover {
+  transform: scale(1.2); /* Ingrandisce l'immagine base quando hover */
 }
 
 .hover-image {
-  opacity: 0;
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
 }
 
-.image-container:hover .hover-image {
-  opacity: 1;
-}
-
-.image-container:hover .base-image {
-  opacity: 50%;
-}
-
-a img {
-  display: block;
+.image-container img {
+  transition: opacity 0.3s ease;
 }
 
 /* SCSS per input scontornato */
@@ -32,58 +30,26 @@ a img {
   /* Centrare il testo del placeholder */
   text-align: center; /* Centra il testo orizzontalmente */
 }
-
 .scontornato-input::placeholder {
   font-size: 70%;
   font-family: sans-serif;/* Aumenta la dimensione del font del placeholder */
   color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
   text-align: center; /* Centra il testo del placeholder anche in verticale */
 }
-
 .scontornato-input:focus {
   border-color: #64b5f6; /* Colore di focus più chiaro */
   outline: none; /* Rimuove il contorno predefinito */
   box-shadow: 0 0 8px rgba(100, 181, 246, 0.5); /* Aggiungi un'ombra leggera */
 }
 
-.transparent-button {
-  background-color: transparent; /* Imposta lo sfondo trasparente */
-  border: none; /* Rimuove il bordo */
-  padding: 0; /* Rimuove eventuali spazi interni */
-  cursor: pointer; /* Cambia il cursore per far capire che è cliccabile */
-}
-.base-image {
-  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
-}
-
-.hover-image {
-  position: absolute; /* Puoi usare il positioning assoluto per sovrapporre le immagini */
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
-  display: none; /* L'hover non è visibile finché il mouse non è sopra */
-}
-
-.base-image:hover {
-  transform: scale(1.2); /* Ingrandisce l'immagine base quando hover */
-}
-
-.image-container .hover-image {
-  display: block; /* Mostra l'immagine hover quando l'utente ci passa sopra */
-}
-
-.image-container .base-image:hover + .hover-image {
-  display: block; /* Mostra l'immagine hover quando il mouse è sopra la base */
-}
-
 .selected {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per dare l'effetto "premuto" */
 }
-
 .selected .base-image {
-  opacity: 0.5; /* Riduci l'opacità dell'immagine base quando selezionato */
+  opacity: 1; /* Riduci l'opacità dell'immagine base quando selezionato */
+  transform: scale(1.5);
 }
-
 .selected .hover-image {
   opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
 }
+

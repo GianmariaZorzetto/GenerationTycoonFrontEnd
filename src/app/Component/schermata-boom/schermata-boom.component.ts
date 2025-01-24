@@ -12,6 +12,7 @@ import {NgIf} from '@angular/common';
     NgIf
   ],
   templateUrl: './schermata-boom.component.html',
+  standalone: true,
   styleUrl: './schermata-boom.component.css'
 })
 export class SchermataBoomComponent implements OnInit
