@@ -25,7 +25,7 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
   solution: string
 
   constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
-    this.bg.changeBackground("brainj/brainj_theme_finale.png")
+    this.bg.changeBackground("brainj/schermata_brainj_finale.png")
     this.brainj = this.httpService.getSingleBrainj();
     this.startDate = new Date()
     console.log(this.startDate)
