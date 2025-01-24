@@ -13,7 +13,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @Input() autore: string = "M";
   @Input() hoverabile:boolean = false;
   @Input() nascosto:boolean = false;
-
+  @Input() mFactor: number = 1.15;
 
   private asr =2;
   private dimensioneW = 0;
@@ -22,7 +22,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     "M":[2560,1270],
     "F":[1915,945],
     "D":[1904,911],
-    "R":[1535,695]
+    "R":[1535,695],
+    "N":[1920,920]
   };
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
@@ -105,8 +106,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @HostListener('mouseenter')
   onMouseEnter() {
     if (this.hoverabile) {
-      this.renderer.setStyle(this.el.nativeElement, 'width', `${this.dimensioneW * 1.15}px`);
-      this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH * 1.15}px`);
+      this.renderer.setStyle(this.el.nativeElement, 'width', `${this.dimensioneW * this.mFactor}px`);
+      this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH * this.mFactor}px`);
     }
 
     if(this.nascosto)
