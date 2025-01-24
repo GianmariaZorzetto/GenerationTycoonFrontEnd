@@ -4,13 +4,13 @@ import {BackgroundService} from "../../../../services/background.service";
 import {FormsModule} from "@angular/forms";
 import {UserRegistrationDTOReq} from "../../model/UserRegistrationDTOReq";
 import {PosizionaDirective} from "../../direttive/posiziona.directive";
-import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
 
 
 @Component({
   selector: "app-schermata-registrati",
-  imports: [FormsModule, PosizionaDirective, NgIf, NgForOf, RouterLink, NgClass, NgStyle],
+  imports: [FormsModule, PosizionaDirective, NgIf, RouterLink, NgClass],
   templateUrl: "./schermata-registrati.component.html",
   standalone: true,
   styleUrls: ["./schermata-registrati.component.css"]
@@ -70,28 +70,27 @@ export class SchermataRegistratiComponent {
     this.user.difficulty = difficulty; // Aggiorna la difficoltà nel modello user
   }
 
+  difficultyToNumber = {
+    EASY: 3,
+    MEDIUM: 2,
+    HARD: 1
+  }
+
   // Metodo per gestire il salvataggio del nuovo utente
   saveUser() {
     // Chiamata al servizio HTTP per salvare l"utente
-    this.httpService.insertUser(this.user).subscribe((registrationRes) => {
-      this.httpService.userLoginReqDto = registrationRes
-      switch (registrationRes.difficulty) {
-        case "EASY":
-          this.httpService.vita = 3
-          break;
-        case "MEDIUM":
-          this.httpService.vita = 2
-          break;
-        case "HARD":
-          this.httpService.vita = 1
-          break;
-      }
-       this.httpService.prendiKabooms();
-       this.httpService.prendiBrainjs();
-      this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
-    },
-      (error) => {
-      alert("Errore, riprova")
+    this.httpService.insertUser(this.user).subscribe(
+      {
+        next: (res) => {
+          // @ts-ignore
+          this.httpService.vita = this.difficultyToNumber[res.difficulty]
+          this.httpService.prendiKabooms()
+          this.httpService.prendiBrainjs()
+          this.route.navigate(["/benvenuto"])
+        },
+        error: (err) => {
+          alert("Errore, riprova")
+        }
       });
   }
 

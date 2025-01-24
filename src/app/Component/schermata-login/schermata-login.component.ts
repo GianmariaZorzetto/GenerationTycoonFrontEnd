@@ -32,13 +32,17 @@ export class SchermataLoginComponent {
   }
 
   loginUser() {
-    this.httpService.login(this.user).subscribe((res) => {
-      this.httpService.userLoginReqDto = res;
-      this.httpService.mangiaNoodle()
-      this.route.navigate(["/bedroom"])
-    },
-    (error) => {
-      alert("Email o Password non validi.")
-    })
+    this.httpService.login(this.user).subscribe(
+      {
+        next: (res) => {
+          this.httpService.mangiaNoodle()
+          this.httpService.prendiBrainjs()
+          this.httpService.prendiKabooms()
+          this.route.navigate(["/bedroom"])
+        },
+        error: (err) => {
+          alert("Email o Password non validi.")
+        }
+      })
   }
 }

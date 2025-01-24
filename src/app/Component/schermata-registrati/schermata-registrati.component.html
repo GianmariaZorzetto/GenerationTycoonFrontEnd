@@ -14,7 +14,7 @@
       posizione [x]="767" [y]="188" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'"
       [(ngModel)]="user!.email"
       required
-      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+      email>
     <input
       name="username"
       type="text"
@@ -36,7 +36,7 @@
       posizione [x]="767" [y]="388" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'"
       [(ngModel)]="user!.password"
       required
-      pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[?!@$ %^&*-]).{8,}$">
+      pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[?!@$ %^&*-]).{8,}">
 <div *ngIf="password.invalid && password.dirty">
          <img  posizione [x]="1300" [y]="340" [w]="270" [h]="200" [centroMassa]="true" [autore]="'R'"
                src="sfondi_schermate/register/info_password.png"
