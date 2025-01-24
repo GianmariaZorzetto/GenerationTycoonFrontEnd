@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {FormsModule} from '@angular/forms';
-import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 import {NgIf} from '@angular/common';
+import {HttpService} from '../../services/http-service.service';
+import {UserDTOLoginReq} from '../../model/UserDTOLoginReq';
 
 @Component({
   selector: 'app-schermata-login',
@@ -19,17 +20,21 @@ import {NgIf} from '@angular/common';
   styleUrl: './schermata-login.component.css'
 })
 export class SchermataLoginComponent {
-  constructor(private backgroundService: BackgroundService) {
+  constructor(private backgroundService: BackgroundService, private route: Router, private httpService: HttpService) {
     this.backgroundService.changeBackground("login/Sfondo_login.png")
   }
 
   showPassword = true;
 
-  user: UserRegistrationDTOReq = {
+  user: UserDTOLoginReq = {
     email: "",
-    username: "",
     password: "",
-    difficulty: ""
+  }
 
+  loginUser() {
+    this.httpService.login(this.user).subscribe((res) => {
+      this.httpService.userLoginReqDto = res;
+      this.route.navigate(["/bedroom"])
+    })
   }
 }

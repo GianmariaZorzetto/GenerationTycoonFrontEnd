@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 import {Router, RouterLink} from "@angular/router";
-import { BackgroundService } from "../../../../services/background.service";
-import { FormsModule } from "@angular/forms";
-import { UserRegistrationDTOReq } from "../../model/UserRegistrationDTOReq";
-import { PosizionaDirective } from "../../direttive/posiziona.directive";
+import {BackgroundService} from "../../../../services/background.service";
+import {FormsModule} from "@angular/forms";
+import {UserRegistrationDTOReq} from "../../model/UserRegistrationDTOReq";
+import {PosizionaDirective} from "../../direttive/posiziona.directive";
 import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
 
@@ -72,14 +72,14 @@ export class SchermataRegistratiComponent {
 
   // Metodo per gestire il salvataggio del nuovo utente
   saveUser() {
-    console.log("Utente creato:", this.user);
     // Chiamata al servizio HTTP per salvare l"utente
-    this.httpService.insertUser(this.user).subscribe(() => {
+    this.httpService.insertUser(this.user).subscribe((registrationRes) => {
+      this.httpService.userLoginReqDto = registrationRes
       this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
     });
   }
 
-  constructor(private service: BackgroundService, private route: Router,private httpService: HttpService) {
+  constructor(private service: BackgroundService, private route: Router, private httpService: HttpService) {
     this.service.changeBackground("register/schermata_registrazione.png");
   }
 }
