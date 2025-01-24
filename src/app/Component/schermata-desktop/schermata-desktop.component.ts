@@ -10,6 +10,7 @@ import {PosizionaDirective} from '../../direttive/posiziona.directive';
     PosizionaDirective
   ],
   templateUrl: './schermata-desktop.component.html',
+  standalone: true,
   styleUrl: './schermata-desktop.component.css'
 })
 export class SchermataDesktopComponent
