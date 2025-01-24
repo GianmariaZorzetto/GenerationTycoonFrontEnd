@@ -1,9 +1,10 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnDestroy} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {BrainjDTOResp} from '../../model/BrainjDTOResp';
 import {HttpService} from '../../services/http-service.service';
+import {UserScoreDTOReq} from '../../model/UserScoreDTOReq';
 
 @Component({
   selector: 'app-schermata-brainj',
@@ -15,20 +16,24 @@ import {HttpService} from '../../services/http-service.service';
   standalone: true,
   styleUrl: './schermata-brainj_dinamica.component.css'
 })
-export class SchermataBrainj_dinamicaComponent {
+export class SchermataBrainj_dinamicaComponent implements OnDestroy {
 
   brainj: BrainjDTOResp
 
-  dataDiInizio: Date
+  startDate: Date
 
   solution: string
 
-  constructor(private bg: BackgroundService, private httpService: HttpService) {
+  constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
     this.bg.changeBackground("brainj/brainj_theme_final.png")
     this.brainj = this.httpService.getSingleBrainj();
-    this.dataDiInizio = new Date()
-    console.log(this.dataDiInizio)
+    this.startDate = new Date()
+    console.log(this.startDate)
     this.solution = ""
+  }
+
+  ngOnDestroy(): void {
+    this.failQuiz()
   }
 
   @HostListener('window:message', ['$event'])
@@ -40,11 +45,29 @@ export class SchermataBrainj_dinamicaComponent {
 
   checkAnswer() {
     if (this.solution === this.brainj.answer) {
-      // TODO INVIO RICHIESTA PUNTEGGIo
-      console.log("HAI FATTO GIUSTO")
+      let endDate = new Date();
+      let dto: UserScoreDTOReq = {
+        difficulty: this.httpService.userLoginReqDto.difficulty,
+        endTime: endDate,
+        hp: this.httpService.life,
+        startTime: this.startDate
+      }
+      this.httpService.calculateScore(dto).subscribe({
+        next: (res) => {
+          this.httpService.quizResult = {result: true, score: res.score}
+          this.route.navigate(["/brainj_dinamico_risultato"])
+        },
+        error: (err) => {
+          alert("Errore nel calcolo del punteggio")
+        }
+      })
     } else {
-      // TODO TOGLI VITA
-      console.log("HAI FATTO SBAGLIATO")
+      this.failQuiz();
     }
+  }
+
+  private failQuiz() {
+    this.httpService.quizResult = {result: false, score: 0}
+    this.httpService.quizCompleted()
   }
 }
