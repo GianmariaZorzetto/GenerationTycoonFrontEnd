@@ -6,35 +6,45 @@ import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
 import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
+import * as console from 'node:console';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  get vita() {
-    return this._vita
+  get numberOfQuiz() {
+    return this._numberOfQuiz;
   }
 
-  set vita(value: number) {
-    this._vita = value;
+  quizCompleted() {
+    if (this._numberOfQuiz == 0) return;
+    this._numberOfQuiz -= 1;
   }
 
-  get userLoginReqDto(): UserLoginDTOResp {
-    return this._userLoginReqDto;
+  get life() {
+    return this._life
   }
 
-  scalaVita(): boolean {
-    this._vita -= 1
-    return this._vita == 0
+  set life(value: number) {
+    this._life = value;
   }
 
-  mangiaNoodle() {
+  loseLife(): boolean {
+    this._life -= 1
+    return this._life == 0
+  }
+
+  eatNoodle() {
     if (this._noodleOk < 1) return;
     this._noodleOk -= 1;
   }
 
-  haiNoodle(): boolean {
+  availableNoodle(): boolean {
     return this._noodleOk == 1;
+  }
+
+  get userLoginReqDto(): UserLoginDTOResp {
+    return this._userLoginReqDto;
   }
 
   set userLoginReqDto(value: UserLoginDTOResp) {
@@ -43,16 +53,21 @@ export class HttpService {
   }
 
   private _userLoginReqDto: UserLoginDTOResp;
-  private _vita: number;
-  private _noodleOk = 1;
-  private _kabooms: KaboomDTOResp[] = []
-  private _brainjs: BrainjDTOResp[] = []
+  private _life: number;
+  private _numberOfQuiz;
+  private _noodleOk;
+  private _kabooms: KaboomDTOResp[];
+  private _brainjs: BrainjDTOResp[];
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
       difficulty: "", id: 0, score: 0, token: "", username: ""
     }
-    this._vita = 0
+    this._life = 0;
+    this._noodleOk = 1;
+    this._kabooms = [];
+    this._brainjs = [];
+    this._numberOfQuiz = 10;
   }
 
   insertUser(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
@@ -67,33 +82,28 @@ export class HttpService {
     }));
   }
 
-  prendiKabooms() {
+  getKabooms() {
     this.http.get<KaboomDTOResp[]>("/api/kabooms").subscribe(res => {
       this._kabooms = res
       console.log(this._kabooms)
     })
   }
 
-  prendiBrainjs() {
+  getBrainjs() {
     this.http.get<BrainjDTOResp[]>("/api/brainjs").subscribe(res => {
       this._brainjs = res
       console.log(this._brainjs)
     })
   }
 
-  prendiBrainj(): BrainjDTOResp {
+  getSingleBrainj(): BrainjDTOResp {
     //   // TODO prendi casualmente un brainj, toglilo dall'array e restituiscilo
     return this._brainjs[0]
   }
 
-  prendiKaboom(): KaboomDTOResp {
+  getSingleKaboom(): KaboomDTOResp {
     // TODO prendi casualmente un kaboom, toglilo dall'array e restituiscilo.
     return this._kabooms[0]
   }
-
-  getUserInfoLogin(dto: UserLoginDTOResp): Observable<UserLoginDTOResp> {
-    return this.http.post<UserLoginDTOResp>("/api/users/login", dto);
-  }
-
 
 }
