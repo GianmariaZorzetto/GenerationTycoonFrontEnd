@@ -3,15 +3,18 @@ import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 import {BackgroundService} from '../../../../services/background.service';
 import {Router, RouterLink} from '@angular/router';
 import {HttpService} from '../../services/http-service.service';
-import {NgClass} from '@angular/common';
+import {NgClass, NgIf} from '@angular/common';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-schermata-difficolta',
   imports: [
     NgClass,
     PosizionaDirective,
-    RouterLink
+    RouterLink,
+    NgIf,
+    FormsModule
   ],
   templateUrl: './schermata-difficolta.component.html',
   standalone: true,
@@ -82,7 +85,7 @@ export class SchermataDifficoltaComponent {
   }
 
   constructor(private service: BackgroundService, private route: Router,private httpService: HttpService) {
-    this.service.changeBackground("difficolta/Schermata_difficoltà.png");
+    this.service.changeBackground("difficolta/difficolta.png");
   }
 
 }
