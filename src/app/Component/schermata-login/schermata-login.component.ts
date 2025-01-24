@@ -35,6 +35,9 @@ export class SchermataLoginComponent {
     this.httpService.login(this.user).subscribe((res) => {
       this.httpService.userLoginReqDto = res;
       this.route.navigate(["/bedroom"])
+    },
+    (error) => {
+      alert("Email o Password non validi.")
     })
   }
 }
