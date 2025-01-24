@@ -16,6 +16,6 @@ import {RouterLink} from '@angular/router';
 })
 export class SchermataBrainjComponent {
   constructor(private bg: BackgroundService) {
-    this.bg.changeBackground("brainj/brainj_finale.png")
+    this.bg.changeBackground("brainj/brainj_theme_final.png")
   }
 }
