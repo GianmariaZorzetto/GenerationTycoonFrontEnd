@@ -76,7 +76,10 @@ export class SchermataRegistratiComponent {
     this.httpService.insertUser(this.user).subscribe((registrationRes) => {
       this.httpService.userLoginReqDto = registrationRes
       this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
-    });
+    },
+      (error) => {
+      alert("Errore, riprova")
+      });
   }
 
   constructor(private service: BackgroundService, private route: Router, private httpService: HttpService) {
