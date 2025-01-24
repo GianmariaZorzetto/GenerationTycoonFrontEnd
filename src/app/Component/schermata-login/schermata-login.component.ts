@@ -3,7 +3,7 @@ import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {FormsModule} from '@angular/forms';
-import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
+import {UserDTOReq} from '../../model/UserDTOReq';
 
 @Component({
   selector: 'app-schermata-login',
@@ -18,8 +18,10 @@ import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 })
 export class SchermataLoginComponent {
   constructor(private backgroundService: BackgroundService) {
-    this.backgroundService.changeBackground("login/Sfondo_login_reference.png")
+    this.backgroundService.changeBackground("login/Sfondo_login.png")
   }
+
+  showPassword = true;
 
   user: UserRegistrationDTOReq = {
     email: "",
