@@ -13,6 +13,7 @@ a img {
 
 .hover-image {
   transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+  z-index: 3;
 }
 
 .image-container img {
@@ -52,4 +53,3 @@ a img {
 .selected .hover-image {
   opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
 }
-
