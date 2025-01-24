@@ -17,8 +17,6 @@ import {HttpService} from "../../services/http-service.service";
 })
 export class SchermataRegistratiComponent {
 
-
-
   showPassword = true;
 
   user: UserRegistrationDTOReq = {
