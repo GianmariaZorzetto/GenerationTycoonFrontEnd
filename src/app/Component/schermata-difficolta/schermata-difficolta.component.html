@@ -1,0 +1,68 @@
+<div class="image-container">
+  <!-- Bottone "Facile" -->
+  <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)" (click)="selectDifficulty('EASY')"
+       [ngClass]="{'selected': selectedButton === 'EASY'}">
+    <img
+      posizione
+      [x]="425" [y]="385"
+      [w]="items[0].baseW" [h]="items[0].baseH"
+      [src]="items[0].baseImage" [autore]="'R'"
+      alt="bottone_facile"
+      class="base-image" />
+
+    <img
+      *ngIf="items[0].isHovered"
+      posizione
+      [x]="343" [y]="410"
+      [w]="330" [h]="125"
+      [src]="items[0].hoverImage" [autore]="'R'"
+      alt="modalita_facile"
+      class="hover-image" />
+  </div>
+
+  <!-- Bottone "Intermedio" -->
+  <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)" (click)="selectDifficulty('MEDIUM')"
+       [ngClass]="{'selected': selectedButton === 'MEDIUM'}">
+    <img
+      posizione
+      [x]="674" [y]="531"
+      [w]="items[1].baseW" [h]="items[1].baseH"
+      [src]="items[1].baseImage" [autore]="'R'"
+      alt="bottone_intermedio"
+      class="base-image" />
+
+    <img
+      *ngIf="items[1].isHovered"
+      posizione
+      [x]="586" [y]="410"
+      [w]="330" [h]="125"
+      [src]="items[1].hoverImage" [autore]="'R'"
+      alt="modalita_intermedia"
+      class="hover-image" />
+  </div>
+
+  <!-- Bottone "Avanzato" -->
+  <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)" (click)="selectDifficulty('HARD')"
+       [ngClass]="{'selected': selectedButton === 'HARD'}">
+    <img
+      posizione
+      [x]="920" [y]="531"
+      [w]="items[2].baseW" [h]="items[2].baseH"
+      [src]="items[2].baseImage" [autore]="'R'"
+      alt="bottone_avanzato"
+      class="base-image" />
+
+    <img
+      *ngIf="items[2].isHovered"
+      posizione
+      [x]="830" [y]="410"
+      [w]="330" [h]="125"
+      [src]="items[2].hoverImage" [autore]="'R'"
+      alt="modalita_avanzata"
+      class="hover-image" />
+  </div>
+</div>
+
+<a routerLink="/tutorial" (click)="saveUser()">
+  <img posizione [x]="1110" [y]="87" [w]="148" [h]="55" [centroMassa]="true" [hoverabile]="true" [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti" />
+</a>
