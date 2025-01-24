@@ -1,11 +1,42 @@
-<input placeholder="Email" class="form-control mb-2 scontornato-input" posizione [x]="550" [y]="400" [w]="1630" [h]="150" [autore]="'D'" [(ngModel)]="user!.email"><br>
+<input
+  placeholder="Email"
+  class="form-control mb-2 scontornato-input"
+  posizione
+  [x]="520"
+  [y]="395"
+  [w]="827"
+  [h]="82"
+  [autore]="'D'"
+  [(ngModel)]="user!.email"
+  required
+  email>
 
-<input placeholder="Password" class="form-control mb-2 scontornato-input" posizione [x]="550" [y]="540" [w]="1630" [h]="150" [autore]="'D'" [(ngModel)]="user!.password"><br>
+<input
+  [type]="showPassword ? 'text' : 'password'"
+  placeholder="Password"
+  class="form-control mb-2 scontornato-input"
+  posizione
+  [x]="520"
+  [y]="538"
+  [w]="827"
+  [h]="82"
+  [autore]="'D'"
+  [(ngModel)]="user!.password"
+  required>
+<button
+  class="transparent-button"
+  posizione [x]="1320" [y]="560" [w]="30" [h]="25" [hoverabile]="true" [autore]="'D'"
+  (click)="showPassword = !showPassword">
+  <img *ngIf="showPassword; else hideIcon" src="sfondi_schermate/register/show_button.png" alt="Mostra password">
+  <ng-template #hideIcon>
+    <img src="sfondi_schermate/register/hide_button.png" alt="Nascondi password">
+  </ng-template>
+</button>
 
 <a routerLink="/bedroom">
-  <img posizione [x]="1290" [y]="225" [w]="390" [h]="150" [autore]="'D'" src="sfondi_schermate/register/bottone_avanti.png" alt="bottone_avanti"/>
+  <img posizione [x]="1137" [y]="200" [w]="148" [h]="55" [hoverabile]="true" [centroMassa]="true" [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti"/>
 </a>
 
 <a routerLink="">
-  <img posizione [x]="438" [y]="225" [w]="153" [h]="150" [autore]="'D'" src="sfondi_schermate/register/x_button.png" alt="x_button" />
+  <img posizione [x]="364" [y]="200" [w]="63" [h]="57" [hoverabile]="true" [centroMassa]="true" [autore]="'R'" src="sfondi_schermate/register/x_button.png" alt="x_button" />
 </a>
