@@ -26,13 +26,13 @@ a img {
   border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
   padding: 12px 20px; /* Padding più ampio per un look più morbido */
   background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
-  font-size: 30px; /* Adatta la dimensione del testo */
-
+  font-size: 140%; /* Adatta la dimensione del testo */
+  color: #464646;
   /* Centrare il testo del placeholder */
   text-align: center; /* Centra il testo orizzontalmente */
 }
 .scontornato-input::placeholder {
-  font-size: 70%;
+  font-size: 140%;
   font-family: sans-serif;/* Aumenta la dimensione del font del placeholder */
   color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
   text-align: center; /* Centra il testo del placeholder anche in verticale */
@@ -48,8 +48,9 @@ a img {
 }
 .selected .base-image {
   opacity: 1; /* Riduci l'opacità dell'immagine base quando selezionato */
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .selected .hover-image {
   opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
 }
+

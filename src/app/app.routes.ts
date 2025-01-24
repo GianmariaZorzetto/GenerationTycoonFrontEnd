@@ -27,6 +27,12 @@ import {SchermataGraduationComponent} from './Component/schermata-graduation/sch
 import {SchermataLoseComponent} from './Component/schermata-lose/schermata-lose.component';
 import {SchermataKaboomComponent} from './Component/schermata-kaboom/schermata-kaboom.component';
 import {SchermataDifficoltaComponent} from './Component/schermata-difficolta/schermata-difficolta.component';
+import {
+  SchermataKaboom_dinamicaComponent
+} from './Component/schermata-kaboom_dinamica/schermata-kaboom_dinamica.component';
+import {
+  SchermataBrainj_dinamicaComponent
+} from './Component/schermata-brainj_dinamica/schermata-brainj_dinamica.component';
 
 
 export const routes: Routes = [
@@ -44,8 +50,11 @@ export const routes: Routes = [
   {path: 'benvenuto', component: SchermataBenvenutoComponent},
   {path: 'graduation', component: SchermataGraduationComponent},
   {path: 'lose', component: SchermataLoseComponent},
-  {path: 'kaboom', component: SchermataKaboomComponent},
+  {path: 'kaboom', component: SchermataKaboomComponent}, //kaboom stock per desktop
   {path: 'difficolta', component: SchermataDifficoltaComponent},
+  {path: 'kaboom_dinamico', component: SchermataKaboom_dinamicaComponent}, //Kaboom per task
+  {path: 'brainj_dinamico', component: SchermataBrainj_dinamicaComponent}, //Kaboom per task
+
 
 ];
 
