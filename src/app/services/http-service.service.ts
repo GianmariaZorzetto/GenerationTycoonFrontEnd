@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UserRegistrationDTOReq} from '../model/UserRegistrationDTOReq';
@@ -10,16 +10,28 @@ import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
   providedIn: 'root'
 })
 export class HttpService {
-
-  constructor(private http: HttpClient) {}
-
-  insertUser(dto:UserRegistrationDTOReq): Observable<UserLoginDTOResp>
-  {
-    return this.http.post<UserLoginDTOResp>("/api/users/register",dto);
+  get userLoginReqDto(): UserLoginDTOResp {
+    return this._userLoginReqDto;
   }
 
-  login(dto:UserDTOLoginReq): Observable<UserLoginDTOResp>
-  {
+  set userLoginReqDto(value: UserLoginDTOResp) {
+    this._userLoginReqDto = value;
+    console.log(this._userLoginReqDto.token)
+  }
+
+  private _userLoginReqDto: UserLoginDTOResp;
+
+  constructor(private http: HttpClient) {
+    this._userLoginReqDto = {
+      difficulty: "", id: 0, score: 0, token: "", username: ""
+    }
+  }
+
+  insertUser(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
+    return this.http.post<UserLoginDTOResp>("/api/users/register", dto);
+  }
+
+  login(dto: UserDTOLoginReq): Observable<UserLoginDTOResp> {
     return this.http.post<UserLoginDTOResp>("/api/users/login", dto)
   }
 }
