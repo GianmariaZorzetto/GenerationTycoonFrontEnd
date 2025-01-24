@@ -36,6 +36,9 @@ import {
 import {
   SchermataKaboomRisultatoComponent
 } from './Component/schermata-kaboom-risultato/schermata-kaboom-risultato.component';
+import {
+  SchermataBrainjRisultatoComponent
+} from './Component/schermata-brainj-risultato/schermata-brainj-risultato.component';
 
 
 export const routes: Routes = [
@@ -58,7 +61,7 @@ export const routes: Routes = [
   {path: 'kaboom_dinamico', component: SchermataKaboom_dinamicaComponent}, //Kaboom per task
   {path: 'kaboom_dinamico_risultato', component: SchermataKaboomRisultatoComponent}, //risultato Kaboom per task
   {path: 'brainj_dinamico', component: SchermataBrainj_dinamicaComponent}, //brainj per task
-  // {path: 'brainj_dinamico_risultato', component: } //risultato brainj per task
+  {path: 'brainj_dinamico_risultato', component: SchermataBrainjRisultatoComponent } //risultato brainj per task
 
 
 ];
