@@ -5,7 +5,7 @@ import {UserRegistrationDTOReq} from '../model/UserRegistrationDTOReq';
 import {UserLeaderboardDTOReq} from '../model/UserLeaderboardDTOReq';
 import {UserDTOLoginReq} from '../model/UserDTOLoginReq';
 import {UserLoginDTOResp} from '../model/UserLoginDTOResp';
-import * as console from 'node:console';
+// import * as console from 'node:console';
 
 @Injectable({
   providedIn: 'root'
