@@ -79,13 +79,13 @@ export class SchermataRegistratiComponent {
   // Metodo per gestire il salvataggio del nuovo utente
   saveUser() {
     // Chiamata al servizio HTTP per salvare l"utente
-    this.httpService.insertUser(this.user).subscribe(
+    this.httpService.register(this.user).subscribe(
       {
         next: (res) => {
           // @ts-ignore
-          this.httpService.vita = this.difficultyToNumber[res.difficulty]
-          this.httpService.prendiKabooms()
-          this.httpService.prendiBrainjs()
+          this.httpService.life = this.difficultyToNumber[res.difficulty]
+          this.httpService.getKabooms()
+          this.httpService.getBrainjs()
           this.route.navigate(["/benvenuto"])
         },
         error: (err) => {
