@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import {Router, RouterLink} from "@angular/router";
 import { BackgroundService } from "../../../../services/background.service";
 import { FormsModule } from "@angular/forms";
-import { UserDTOReq } from "../../model/UserDTOReq";
+import { UserRegistrationDTOReq } from "../../model/UserRegistrationDTOReq";
 import { PosizionaDirective } from "../../direttive/posiziona.directive";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
@@ -18,7 +18,7 @@ import {HttpService} from "../../services/http-service.service";
 export class SchermataRegistratiComponent {
   showPassword = true;
 
-  user: UserDTOReq = {
+  user: UserRegistrationDTOReq = {
     email: "",
     username: "",
     password: "",
