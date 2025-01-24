@@ -10,10 +10,11 @@ import {PosizionaDirective} from '../../direttive/posiziona.directive';
     PosizionaDirective
   ],
   templateUrl: './schermata-tutorial.component.html',
+  standalone: true,
   styleUrl: './schermata-tutorial.component.css'
 })
 export class SchermataTutorialComponent {
   constructor(private bg: BackgroundService) {
-    this.bg.changeBackground("tutorial/tutorial_finale.png")
+    this.bg.changeBackground("tutorial/tutorial_finalefinale.png")
   }
 }
