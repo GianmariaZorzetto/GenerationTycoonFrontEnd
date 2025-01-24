@@ -40,7 +40,7 @@ export class SchermataBoomComponent implements OnInit
       this.flag = false;
     } else
     {
-      this.image = "boom/boomEtextBox2.png";
+      this.image = "boom/schermata_boom2_Final.png";
       this.imageWithoutChat = false;
       this.imageWithChat = true;
       this.flag = true;
