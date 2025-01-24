@@ -86,8 +86,8 @@ export class SchermataRegistratiComponent {
           this.httpService.vita = 1
           break;
       }
-      this.httpService.prendiKabooms();
-      this.httpService.prendiBrainjs();
+       this.httpService.prendiKabooms();
+       this.httpService.prendiBrainjs();
       this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
     },
       (error) => {
