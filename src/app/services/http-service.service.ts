@@ -54,6 +54,7 @@ export class HttpService {
   }
 
   loseLife(): boolean {
+    if (this._life == 0) return false
     this._life -= 1
     return this._life == 0
   }
@@ -168,5 +169,6 @@ export class HttpService {
     this.getBrainjs()
     this.getKabooms()
     this.userLoginReqDto = dto
+    this.numberOfQuiz = 10
   }
 }

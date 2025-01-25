@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
-import {Router, RouterLink} from '@angular/router';
+import {RouterLink} from '@angular/router';
 import {BackgroundService} from '../../../../services/background.service';
 import {HttpService} from '../../services/http-service.service';
 import {NgIf} from '@angular/common';

@@ -37,7 +37,13 @@ export class SchermataKaboom_dinamicaComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     console.log("SONO IN ONDESTROY")
-    if (!this.quizResult.result) this.httpService.loseLife()
+    if (!this.quizResult.result)
+      // LOSE LIFE MI RESTITUISCE TRUE SE L'UTENTE È MORTO
+      // FALSE ALTRIMENTI
+      // CONTROLLA INOLTRE CHE NON TI FACCIA ANDARE SULLA SCHERMATA DI LOSE
+      // NEL CASO IN CUI TU SIA IN MODALITÀ LOGIN
+      if (this.httpService.loseLife())
+        this.route.navigate(["/lose"])
     this.httpService.quizCompleted()
     this.httpService.quizResult = this.quizResult
     this.httpService.score += this.quizResult.score
@@ -45,7 +51,15 @@ export class SchermataKaboom_dinamicaComponent implements OnDestroy {
 
   checkAnswer(color: string) {
     if (color === this.kaboom.correctColor) {
-      if (this.httpService.life == 0) this.quizResult = {result: true, score: 0}
+      if (this.httpService.life == 0) {
+        // SE SEI ENTRATO QUI DENTRO SIGNIFICA CHE HAI FATTO IL LOGIN
+        // STAI QUINDI GIOCANDO FOR FUN
+        // AGGIUNGIAMO AL NUMERO DI QUIZ 1 PERCHÉ ONDESTROY GLIELI DIMINUISCE
+        // DI 1, IMPEDENDO COSÌ CHE UN UTENTE IN MODALITÀ LOGIN VADA A FINIRE SULLA SCHERMATA
+        // DI VITTORIA
+        this.httpService.numberOfQuiz += 1
+        this.quizResult = {result: true, score: 0}
+      }
       let endDate = new Date()
       let dto: UserScoreDTOReq = {
         difficulty: this.httpService.userLoginReqDto.difficulty,
