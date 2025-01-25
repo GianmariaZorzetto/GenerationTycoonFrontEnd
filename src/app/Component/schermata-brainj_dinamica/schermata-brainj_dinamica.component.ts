@@ -44,6 +44,7 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
       this.httpService.loseLife()
     this.httpService.quizCompleted()
     this.httpService.quizResult = this.quizResult
+    this.httpService.score += this.quizResult.score;
   }
 
   @HostListener('window:message', ['$event'])
