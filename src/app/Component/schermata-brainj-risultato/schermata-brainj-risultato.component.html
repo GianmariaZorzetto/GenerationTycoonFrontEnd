@@ -16,10 +16,13 @@
 <p posizione [x]="394" [y]="590" [w]="275" [h]="628" [centroMassa]="true"
    style="color: #64b5f6; width: 243px;
    max-height: 500px; overflow-y: auto; word-wrap: break-word;" *ngIf="quizResult.result">
-  Corretto! Hai Totalizzato: {{ quizResult.score }}
+  Corretto!
 </p>
 <p posizione [x]="394" [y]="590" [w]="275" [h]="628" [centroMassa]="true"
    style="color: #64b5f6; width: 243px;
    max-height: 500px; overflow-y: auto; word-wrap: break-word;" *ngIf="!quizResult.result">
   Sbagliato!
+</p>
+<p>
+  {{ quizResult.score }}
 </p>
