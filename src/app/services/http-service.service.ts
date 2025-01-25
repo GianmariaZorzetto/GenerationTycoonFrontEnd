@@ -8,14 +8,26 @@ import {KaboomDTOResp} from '../model/KaboomDTOResp';
 import {BrainjDTOResp} from '../model/BrainjDTOResp';
 import {UserScoreDTOReq} from '../model/UserScoreDTOReq';
 import {UserScoreDTOResp} from '../model/UserScoreDTOResp';
+import {UserLeaderboardDTOResp} from '../model/UserLeaderboardDTOResp';
+import {UserUpdateScoreDTOReq} from '../model/UserUpdateScoreDTOReq';
+import {UserResetDTOReq} from '../model/UserResetDTOReq';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+  get score(): number {
+    return this._score;
+  }
+
+  set score(value: number) {
+    this._score = value;
+  }
+
   set numberOfQuiz(value) {
     this._numberOfQuiz = value;
   }
+
   get quizResult(): { result: boolean; score: number } {
     return this._quizResult;
   }
@@ -61,7 +73,6 @@ export class HttpService {
 
   set userLoginReqDto(value: UserLoginDTOResp) {
     this._userLoginReqDto = value;
-    console.log(this._userLoginReqDto.token)
   }
 
   private _userLoginReqDto: UserLoginDTOResp;
@@ -71,6 +82,7 @@ export class HttpService {
   private _kabooms: KaboomDTOResp[];
   private _brainjs: BrainjDTOResp[];
   private _quizResult: { result: boolean, score: number }
+  private _score: number
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
@@ -82,6 +94,23 @@ export class HttpService {
     this._brainjs = [];
     this._numberOfQuiz = 10;
     this._quizResult = {result: false, score: 0}
+    this._score = 0
+  }
+
+  getSingleBrainj(): BrainjDTOResp {
+    let index = this.generateRandomNumber(this._brainjs.length);
+    let ret = this._brainjs[index]
+    this._brainjs.splice(index, 1)
+    return ret
+  }
+
+  getSingleKaboom(): KaboomDTOResp {
+    return this._kabooms[this.generateRandomNumber(this._kabooms.length)]
+  }
+
+  private generateRandomNumber(size: number): number {
+    const randomNumber = Math.random();
+    return Math.floor(randomNumber * (size - 1))
   }
 
   register(dto: UserRegistrationDTOReq): Observable<UserLoginDTOResp> {
@@ -110,26 +139,20 @@ export class HttpService {
     })
   }
 
-  getSingleBrainj(): BrainjDTOResp {
-    console.log(this._brainjs.length)
-    let index = this.generateRandomNumber(this._brainjs.length);
-    let ret = this._brainjs[index]
-    this._brainjs.splice(index, 1)
-    console.log(this._brainjs.length)
-    return ret
-  }
-
-  getSingleKaboom(): KaboomDTOResp {
-    return this._kabooms[this.generateRandomNumber(this._kabooms.length)]
-  }
-
   calculateScore(dto: UserScoreDTOReq): Observable<UserScoreDTOResp> {
     return this.http.post<UserScoreDTOResp>("/api/users/score", dto)
   }
 
-  private generateRandomNumber(size: number): number {
-    const randomNumber = Math.random();
-    return Math.floor(randomNumber * (size - 1))
+  getAllLeaderBoard(): Observable<UserLeaderboardDTOResp[]> {
+    return this.http.get<UserLeaderboardDTOResp[]>("/api/users")
+  }
+
+  updateUserScore(dto: UserUpdateScoreDTOReq): Observable<UserLeaderboardDTOResp> {
+    return this.http.put<UserLeaderboardDTOResp>("/api/users/newScore", dto)
+  }
+
+  resetUserScore(dto: UserResetDTOReq): Observable<UserLoginDTOResp> {
+    return this.http.put<UserLoginDTOResp>("/api/users/reset", dto)
   }
 
 }

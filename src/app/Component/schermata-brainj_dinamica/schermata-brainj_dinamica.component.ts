@@ -40,10 +40,15 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    console.log("SONO IN ONDESTROY")
+    console.log(`QUIZ RESULT DEL COMPONENTE RESULT:${this.quizResult.result}, ${this.quizResult.score}`)
+    console.log(`QUIZ RESULT DEL HTTPSERVICE PRE-SET: ${this.httpService.quizResult.result}, ${this.httpService.quizResult.score}`)
     if (!this.quizResult.result)
       this.httpService.loseLife()
     this.httpService.quizCompleted()
     this.httpService.quizResult = this.quizResult
+    console.log(`QUIZ RESULT DEL HTTPSERVICE POST-SET: ${this.httpService.quizResult.result}, ${this.httpService.quizResult.score}`)
+    this.httpService.score += this.quizResult.score;
   }
 
   @HostListener('window:message', ['$event'])
@@ -54,10 +59,10 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
   }
 
   checkAnswer() {
+    console.log(`SOLUZIONE: ${this.solution === this.brainj.answer}`)
     if (this.solution === this.brainj.answer) {
-      if (this.httpService.life == 0) {
-        this.quizResult = {result: true, score: 0}
-      }
+      console.log(`VITA: ${this.httpService.life}`)
+      if (this.httpService.life == 0) this.quizResult = {result: true, score: 0}
       let endDate = new Date();
       let dto: UserScoreDTOReq = {
         difficulty: this.httpService.userLoginReqDto.difficulty,
@@ -78,7 +83,8 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
           this.route.navigate(["/brainj_dinamico_risultato"])
         }
       })
+    } else {
+      this.route.navigate(["/brainj_dinamico_risultato"])
     }
-    this.route.navigate(["/brainj_dinamico_risultato"])
   }
 }

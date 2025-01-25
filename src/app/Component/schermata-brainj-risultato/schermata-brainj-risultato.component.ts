@@ -20,7 +20,7 @@ export class SchermataBrainjRisultatoComponent {
 
   quizResult: { result: boolean, score: number }
 
-  constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
+  constructor(private bg: BackgroundService, private httpService: HttpService) {
     this.bg.changeBackground("punteggio/BrainJ_punteggio.png")
     this.quizResult = this.httpService.quizResult
     console.log(`Hai vite: ${this.httpService.life}`)
