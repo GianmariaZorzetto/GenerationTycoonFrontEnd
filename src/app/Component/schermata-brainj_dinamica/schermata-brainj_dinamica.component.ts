@@ -22,6 +22,8 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
 
   startDate: Date
 
+  consegna: string | undefined
+
   solution: string
 
   constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
@@ -30,6 +32,10 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
     this.startDate = new Date()
     console.log(this.startDate)
     this.solution = ""
+  }
+
+  ngOnInit(): void{
+    this.consegna = this.brainj.question
   }
 
   ngOnDestroy(): void {
