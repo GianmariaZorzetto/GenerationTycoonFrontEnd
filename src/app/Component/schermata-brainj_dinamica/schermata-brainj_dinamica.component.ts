@@ -69,5 +69,7 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
   private failQuiz() {
     this.httpService.quizResult = {result: false, score: 0}
     this.httpService.quizCompleted()
+    this.httpService.loseLife()
+    this.route.navigate(["/brainj_dinamico_risultato"])
   }
 }
