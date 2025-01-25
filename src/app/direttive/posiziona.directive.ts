@@ -22,7 +22,9 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @Input() hoverabile: boolean = false;
   @Input() nascosto: boolean = false;
   @Input() mFactor: number = 1.15;
+  @Input() dimTesto:number = 0;
 
+  private ridimensionamento=0;
   private asr = 2;
   private dimensioneW = 0;
   private dimensioneH = 0;
@@ -40,7 +42,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   ngOnInit() {
     // Impostiamo la posizione iniziale
     this.setPosition();
-
+    if(this.dimTesto!=0)
+      this.setFont();
     if (this.nascosto)
       this.renderer.setStyle(this.el.nativeElement, 'opacity', `0`);
 
@@ -57,6 +60,16 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   // Gestisce l'evento di resize
   private onResize = () => {
     this.setPosition();
+    if(this.dimTesto)
+      this.setFont();
+  }
+
+  private setFont()
+  {
+
+    // @ts-ignore
+    this.renderer.setStyle(this.el.nativeElement, 'font-size',this.ridimensionamento*this.dimTesto+"px" );
+
   }
 
   // Imposta gli stili CSS in base ai valori di top e left
@@ -93,7 +106,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     const newTop = (vh - 2 * hoff) * percH + hoff;
 
     // @ts-ignore
-    let ridimensionamento = finalHeight / this.vostreDimensioni[this.autore][1];
+    this.ridimensionamento = finalHeight / this.vostreDimensioni[this.autore][1];
     // Impostazione degli stili CSS
     this.renderer.setStyle(this.el.nativeElement, 'position', 'absolute');
     if (this.centroMassa) {
@@ -103,8 +116,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(this.el.nativeElement, 'top', `${newTop}px`);
     this.renderer.setStyle(this.el.nativeElement, 'left', `${newLeft}px`);
 
-    this.dimensioneW = this.w * ridimensionamento;
-    this.dimensioneH = this.h * ridimensionamento;
+    this.dimensioneW = this.w * this.ridimensionamento;
+    this.dimensioneH = this.h * this.ridimensionamento;
     // Impostazione delle dimensioni
     this.renderer.setStyle(this.el.nativeElement, 'width', `${this.dimensioneW}px`);
     this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH}px`);

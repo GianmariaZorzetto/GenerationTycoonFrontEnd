@@ -25,26 +25,26 @@
 </a>
 <div class="container d-flex flex-column align-items-center vh-100">
   <!-- Blocco per la domanda -->
-  <div posizione [x]="465" [y]="87" [w]="970" [h]="128" [autore]="'N'"
+  <div posizione [x]="465" [y]="87" [w]="970" [h]="128" [autore]="'N'" [dimTesto]="36"
        class="question-box mb-5 text-center">
     {{ kaboom.question }}
   </div>
 
   <!--  &lt;!&ndash; Contenitore per i bottoni delle risposte &ndash;&gt;-->
   <div class="answers-grid">
-    <button posizione [x]="560" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'"
+    <button posizione [x]="560" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [dimTesto]="36"
             [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input"
             style="background-color: #960056;" (click)="checkAnswer('RED')">{{ kaboom.answer1 }}
     </button>
-    <button posizione [x]="1380" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'"
+    <button posizione [x]="1380" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'" [dimTesto]="36"
             [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input"
             style="background-color: #0957A2;" (click)="checkAnswer('BLUE')">{{ kaboom.answer2 }}
     </button>
-    <button posizione [x]="560" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'"
+    <button posizione [x]="560" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [dimTesto]="36"
             [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input"
             style="background-color: #C07402;" (click)="checkAnswer('YELLOW')">{{ kaboom.answer4 }}
     </button>
-    <button posizione [x]="1380" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'"
+    <button posizione [x]="1380" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'" [dimTesto]="36"
             [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input"
             style="background-color: #007263;" (click)="checkAnswer('GREEN')"> {{ kaboom.answer3 }}
     </button>

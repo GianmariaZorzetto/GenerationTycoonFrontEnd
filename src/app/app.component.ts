@@ -19,4 +19,6 @@ export class AppComponent {
   cambia() {
     this.bg.changeBackground("immagine.svg")
   }
+
+
 }
