@@ -13,17 +13,17 @@
 
 <!--TODO METTERLI IN POSIZIONE GIUSTA-->
 <p posizione [autore]="'N'" [x]="725" [y]="430" [w]="550" [h]="408"
-   style="color: #ffffff; font-size: 6rem; font-family: monospace;
+   style="color: #ffffff; font-size: 6rem; font-family: 'Pixelify Sans', serif;
    overflow-y: auto; word-wrap: break-word;" *ngIf="quizResult.result">
   Corretto!
 </p>
 <p posizione [autore]="'N'" [x]="702" [y]="430" [w]="550" [h]="408"
-   style="color: #ffffff; font-size: 6rem; font-family: monospace;
+   style="color: #ffffff; font-size: 6rem; font-family: 'Pixelify Sans', serif;
    overflow-y: auto; word-wrap: break-word;" *ngIf="!quizResult.result">
   Sbagliato!
 </p>
 <p posizione [autore]="'N'" [x]="1110" [y]="325" [w]="550" [h]="408"
-   style="color: #ffffff; font-size: 2.5rem; font-family: monospace;
+   style="color: #ffffff; font-size: 2.5rem; font-family: 'Pixelify Sans', serif;
    overflow-y: auto; word-wrap: break-word;">
   {{ quizResult.score }}
 </p>
