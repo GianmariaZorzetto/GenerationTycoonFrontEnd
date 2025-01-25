@@ -44,6 +44,10 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
     console.log(`QUIZ RESULT DEL COMPONENTE RESULT:${this.quizResult.result}, ${this.quizResult.score}`)
     console.log(`QUIZ RESULT DEL HTTPSERVICE PRE-SET: ${this.httpService.quizResult.result}, ${this.httpService.quizResult.score}`)
     if (!this.quizResult.result)
+      // LOSE LIFE MI RESTITUISCE TRUE SE L'UTENTE È MORTO
+      // FALSE ALTRIMENTI
+      // CONTROLLA INOLTRE CHE NON TI FACCIA ANDARE SULLA SCHERMATA DI LOSE
+      // NEL CASO IN CUI TU SIA IN MODALITÀ LOGIN
       if (this.httpService.loseLife())
         this.route.navigate(["/lose"])
     this.httpService.quizCompleted()
@@ -64,6 +68,11 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
     if (this.solution === this.brainj.answer) {
       console.log(`VITA: ${this.httpService.life}`)
       if (this.httpService.life == 0) {
+        // SE SEI ENTRATO QUI DENTRO SIGNIFICA CHE HAI FATTO IL LOGIN
+        // STAI QUINDI GIOCANDO FOR FUN
+        // AGGIUNGIAMO AL NUMERO DI QUIZ 1 PERCHÉ ONDESTROY GLIELI DIMINUISCE
+        // DI 1, IMPEDENDO COSÌ CHE UN UTENTE IN MODALITÀ LOGIN VADA A FINIRE SULLA SCHERMATA
+        // DI VITTORIA
         this.httpService.numberOfQuiz += 1
         this.quizResult = {result: true, score: 0}
       }
