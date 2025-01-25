@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {PosizionaDirective} from "../../direttive/posiziona.directive";
 import {RouterLink} from "@angular/router";
@@ -15,8 +15,7 @@ import {RouterLink} from "@angular/router";
 })
 export class SchermataKaboomRisultatoComponent {
 
-  constructor(private bg:BackgroundService)
-  {
+  constructor(private bg: BackgroundService) {
     this.bg.changeBackground("punteggio/kaboom_punteggio.png")
   }
 

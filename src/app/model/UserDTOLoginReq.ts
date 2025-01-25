@@ -1,5 +1,4 @@
-export interface UserDTOLoginReq
-{
-  email:string;
-  password:string;
+export interface UserDTOLoginReq {
+  email: string;
+  password: string;
 }

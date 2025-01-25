@@ -3,7 +3,8 @@
 
     <div class="image-container">
     <!-- Bottone "Facile" -->
-      <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)" (click)="selectDifficulty('EASY')"
+      <div (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave(0)"
+           (click)="selectDifficulty('EASY')"
            [ngClass]="{'selected': selectedButton === 'EASY'}">
         <img
           posizione
@@ -24,7 +25,8 @@
       </div>
 
       <!-- Bottone "Intermedio" -->
-      <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)" (click)="selectDifficulty('MEDIUM')"
+      <div (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)"
+           (click)="selectDifficulty('MEDIUM')"
            [ngClass]="{'selected': selectedButton === 'MEDIUM'}">
         <img
           posizione
@@ -45,7 +47,8 @@
       </div>
 
       <!-- Bottone "Avanzato" -->
-      <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)" (click)="selectDifficulty('HARD')"
+      <div (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)"
+           (click)="selectDifficulty('HARD')"
            [ngClass]="{'selected': selectedButton === 'HARD'}">
         <img
           posizione
@@ -70,5 +73,6 @@
 </form>
 
 <a (click)="resetUser()">
-  <img posizione [x]="1130" [y]="160" [w]="148" [h]="55" [centroMassa]="true" [hoverabile]="true" [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti"/>
+  <img posizione [x]="1130" [y]="160" [w]="148" [h]="55" [centroMassa]="true" [hoverabile]="true"
+       [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti"/>
 </a>

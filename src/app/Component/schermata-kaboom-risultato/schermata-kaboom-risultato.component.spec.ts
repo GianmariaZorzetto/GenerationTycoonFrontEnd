@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SchermataKaboomRisultatoComponent } from './schermata-kaboom-risultato.component';
+import {SchermataKaboomRisultatoComponent} from './schermata-kaboom-risultato.component';
 
 describe('SchermataKaboomRisultatoComponent', () => {
   let component: SchermataKaboomRisultatoComponent;
@@ -10,7 +10,7 @@ describe('SchermataKaboomRisultatoComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SchermataKaboomRisultatoComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SchermataKaboomRisultatoComponent);
     component = fixture.componentInstance;

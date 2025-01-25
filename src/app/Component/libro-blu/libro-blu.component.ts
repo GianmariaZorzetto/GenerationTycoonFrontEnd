@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from '@angular/router';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
@@ -14,7 +14,7 @@ import {PosizionaDirective} from '../../direttive/posiziona.directive';
   styleUrl: './libro-blu.component.css'
 })
 export class LibroBluComponent {
-  constructor(private bg:BackgroundService) {
+  constructor(private bg: BackgroundService) {
     this.bg.changeBackground("stanza/libroBluOpen.png")
   }
 }

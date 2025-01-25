@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SchermataLoginComponent } from './schermata-login.component';
+import {SchermataLoginComponent} from './schermata-login.component';
 
 describe('SchermataLoginComponent', () => {
   let component: SchermataLoginComponent;
@@ -10,7 +10,7 @@ describe('SchermataLoginComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SchermataLoginComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SchermataLoginComponent);
     component = fixture.componentInstance;

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {BackgroundService} from '../../../../services/background.service';
 import {Router, RouterLink} from "@angular/router";
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
@@ -15,7 +15,7 @@ import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 })
 export class BedroomComponent {
 
-  user:UserRegistrationDTOReq|null = null;
+  user: UserRegistrationDTOReq | null = null;
 
   constructor(private bg: BackgroundService, private HttpService: HttpService) {
     this.bg.changeBackground("stanza/cameretta.png");

@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 import {BackgroundService} from '../../../../services/background.service';
-import {Router, RouterLink} from '@angular/router';
+import {Router} from '@angular/router';
 import {HttpService} from '../../services/http-service.service';
 import {NgClass, NgIf} from '@angular/common';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
@@ -13,7 +12,6 @@ import {UserResetDTOReq} from '../../model/UserResetDTOReq';
   imports: [
     NgClass,
     PosizionaDirective,
-    RouterLink,
     NgIf,
     FormsModule
   ],

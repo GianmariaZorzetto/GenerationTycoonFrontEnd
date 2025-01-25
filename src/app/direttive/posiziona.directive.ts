@@ -1,4 +1,12 @@
-import {Directive, ElementRef, Renderer2, Input, OnInit, OnDestroy, HostListener} from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  Renderer2
+} from '@angular/core';
 
 @Directive({
   standalone: true,
@@ -11,28 +19,29 @@ export class PosizionaDirective implements OnInit, OnDestroy {
   @Input() h: number = 0;
   @Input() centroMassa: boolean = false;
   @Input() autore: string = "M";
-  @Input() hoverabile:boolean = false;
-  @Input() nascosto:boolean = false;
+  @Input() hoverabile: boolean = false;
+  @Input() nascosto: boolean = false;
   @Input() mFactor: number = 1.15;
 
-  private asr =2;
+  private asr = 2;
   private dimensioneW = 0;
   private dimensioneH = 0;
   vostreDimensioni = {
-    "M":[2560,1270],
-    "F":[1915,945],
-    "D":[1904,911],
-    "R":[1535,695],
-    "N":[1920,920]
+    "M": [2560, 1270],
+    "F": [1915, 945],
+    "D": [1904, 911],
+    "R": [1535, 695],
+    "N": [1920, 920]
   };
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+  }
 
   ngOnInit() {
     // Impostiamo la posizione iniziale
     this.setPosition();
 
-    if(this.nascosto)
+    if (this.nascosto)
       this.renderer.setStyle(this.el.nativeElement, 'opacity', `0`);
 
     // @ts-ignore
@@ -59,7 +68,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     const winAsr = vw / vh; // Rapporto d'aspetto della viewport
     let hoff = 0; // Offset verticale
     let woff = 0; // Offset orizzontale
-    let finalHeight = 0;
+    let finalHeight;
     // Calcolo degli offset per le barre nere
     if (winAsr > this.asr) {
       // Barre nere laterali
@@ -73,7 +82,6 @@ export class PosizionaDirective implements OnInit, OnDestroy {
       finalHeight = fullHeight;
     }
     // @ts-ignore
-    // @ts-ignore
     // Calcolo delle percentuali della posizione rispetto alla dimensione dell'immagine originale
     // @ts-ignore
     const percW = this.x / this.vostreDimensioni[this.autore][0];
@@ -85,7 +93,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     const newTop = (vh - 2 * hoff) * percH + hoff;
 
     // @ts-ignore
-    let ridimensionamento = finalHeight/this.vostreDimensioni[this.autore][1];
+    let ridimensionamento = finalHeight / this.vostreDimensioni[this.autore][1];
     // Impostazione degli stili CSS
     this.renderer.setStyle(this.el.nativeElement, 'position', 'absolute');
     if (this.centroMassa) {
@@ -95,8 +103,8 @@ export class PosizionaDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(this.el.nativeElement, 'top', `${newTop}px`);
     this.renderer.setStyle(this.el.nativeElement, 'left', `${newLeft}px`);
 
-    this.dimensioneW = this.w*ridimensionamento;
-    this.dimensioneH = this.h*ridimensionamento;
+    this.dimensioneW = this.w * ridimensionamento;
+    this.dimensioneH = this.h * ridimensionamento;
     // Impostazione delle dimensioni
     this.renderer.setStyle(this.el.nativeElement, 'width', `${this.dimensioneW}px`);
     this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH}px`);
@@ -110,7 +118,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
       this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH * this.mFactor}px`);
     }
 
-    if(this.nascosto)
+    if (this.nascosto)
       this.renderer.setStyle(this.el.nativeElement, 'opacity', `1`);
   }
 
@@ -122,7 +130,7 @@ export class PosizionaDirective implements OnInit, OnDestroy {
       this.renderer.setStyle(this.el.nativeElement, 'height', `${this.dimensioneH}px`);
     }
 
-    if(this.nascosto)
+    if (this.nascosto)
       this.renderer.setStyle(this.el.nativeElement, 'opacity', `0`);
   }
 

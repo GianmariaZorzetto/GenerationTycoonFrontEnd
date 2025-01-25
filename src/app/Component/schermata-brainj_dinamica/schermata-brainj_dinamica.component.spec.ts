@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SchermataBrainj_dinamicaComponent } from './schermata-brainj_dinamica.component';
+import {SchermataBrainj_dinamicaComponent} from './schermata-brainj_dinamica.component';
 
 describe('SchermataBrainjComponent', () => {
   let component: SchermataBrainj_dinamicaComponent;
@@ -10,7 +10,7 @@ describe('SchermataBrainjComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SchermataBrainj_dinamicaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SchermataBrainj_dinamicaComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,3 @@
-export interface UserLeaderboardDTOReq
-{
-  username:string;
+export interface UserLeaderboardDTOReq {
+  username: string;
 }

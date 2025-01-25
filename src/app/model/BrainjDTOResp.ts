@@ -1,5 +1,4 @@
-export interface BrainjDTOResp
-{
-  question:string;
-  answer:string;
+export interface BrainjDTOResp {
+  question: string;
+  answer: string;
 }

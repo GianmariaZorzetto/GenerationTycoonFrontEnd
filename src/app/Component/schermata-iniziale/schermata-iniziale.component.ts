@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from '@angular/router';
 
@@ -11,11 +11,9 @@ import {RouterLink} from '@angular/router';
   standalone: true,
   styleUrl: './schermata-iniziale.component.css'
 })
-export class SchermataInizialeComponent
-{
+export class SchermataInizialeComponent {
 
-  constructor(private service: BackgroundService)
-  {
+  constructor(private service: BackgroundService) {
     this.service.changeBackground("login/background_Final.png")
   }
 

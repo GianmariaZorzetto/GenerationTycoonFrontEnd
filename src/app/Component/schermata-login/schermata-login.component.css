@@ -1,6 +1,7 @@
 .image-container img {
   transition: opacity 0.3s ease;
 }
+
 .base-image {
   display: block;
 }
@@ -35,7 +36,7 @@ a img {
 
 .scontornato-input::placeholder {
   font-size: 70%;
-  font-family: sans-serif;/* Aumenta la dimensione del font del placeholder */
+  font-family: sans-serif; /* Aumenta la dimensione del font del placeholder */
   color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
   text-align: center; /* Centra il testo del placeholder anche in verticale */
 }
@@ -52,6 +53,7 @@ a img {
   padding: 0; /* Rimuove eventuali spazi interni */
   cursor: pointer; /* Cambia il cursore per far capire che è cliccabile */
 }
+
 .base-image {
   transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
 }

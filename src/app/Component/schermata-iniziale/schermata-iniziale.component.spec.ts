@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SchermataInizialeComponent } from './schermata-iniziale.component';
+import {SchermataInizialeComponent} from './schermata-iniziale.component';
 
 describe('SchermataInizialeComponent', () => {
   let component: SchermataInizialeComponent;
@@ -10,7 +10,7 @@ describe('SchermataInizialeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SchermataInizialeComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SchermataInizialeComponent);
     component = fixture.componentInstance;

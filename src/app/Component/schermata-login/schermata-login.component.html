@@ -31,17 +31,23 @@
 <!--  <ng-template #hideIcon>-->
 <!--    <img src="sfondi_schermate/register/hide_button.png" alt="Nascondi password">-->
 <!--  </ng-template>-->
-<img posizione [x]="1083" [y]="445" [w]="29" [h]="20" [centroMassa]="true" [hoverabile]="true" [autore]="'R'"
-     (click)="showPassword = !showPassword" *ngIf="showPassword; else hideIcon" src="sfondi_schermate/register/show_button.png" alt="Mostra password">
+<img posizione [x]="1083" [y]="445" [w]="29" [h]="20" [centroMassa]="true" [hoverabile]="true"
+     [autore]="'R'"
+     (click)="showPassword = !showPassword" *ngIf="showPassword; else hideIcon"
+     src="sfondi_schermate/register/show_button.png" alt="Mostra password">
 <ng-template #hideIcon>
-  <img posizione [x]="1083" [y]="445" [w]="29" [h]="23" [centroMassa]="true" [hoverabile]="true" [autore]="'R'"
-       (click)="showPassword = !showPassword" src="sfondi_schermate/register/hide_button.png" alt="Nascondi password">
+  <img posizione [x]="1083" [y]="445" [w]="29" [h]="23" [centroMassa]="true" [hoverabile]="true"
+       [autore]="'R'"
+       (click)="showPassword = !showPassword" src="sfondi_schermate/register/hide_button.png"
+       alt="Nascondi password">
 </ng-template>
 
 <a (click)="loginUser()">
-  <img posizione [x]="1137" [y]="200" [w]="148" [h]="55" [hoverabile]="true" [centroMassa]="true" [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti"/>
+  <img posizione [x]="1137" [y]="200" [w]="148" [h]="55" [hoverabile]="true" [centroMassa]="true"
+       [autore]="'R'" src="sfondi_schermate/register/avanti_button.png" alt="bottone_avanti"/>
 </a>
 
 <a routerLink="">
-  <img posizione [x]="364" [y]="200" [w]="63" [h]="57" [hoverabile]="true" [centroMassa]="true" [autore]="'R'" src="sfondi_schermate/register/x_button.png" alt="x_button" />
+  <img posizione [x]="364" [y]="200" [w]="63" [h]="57" [hoverabile]="true" [centroMassa]="true"
+       [autore]="'R'" src="sfondi_schermate/register/x_button.png" alt="x_button"/>
 </a>

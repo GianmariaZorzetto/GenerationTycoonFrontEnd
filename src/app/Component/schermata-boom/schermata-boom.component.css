@@ -2,6 +2,7 @@
 .cross-group * {
   box-sizing: border-box;
 }
+
 .cross-group {
   width: 18px;
   height: auto;

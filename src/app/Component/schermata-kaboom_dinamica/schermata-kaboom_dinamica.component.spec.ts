@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SchermataKaboom_dinamicaComponent } from './schermata-kaboom_dinamica.component';
+import {SchermataKaboom_dinamicaComponent} from './schermata-kaboom_dinamica.component';
 
 describe('SchermataKaboomComponent', () => {
   let component: SchermataKaboom_dinamicaComponent;
@@ -10,7 +10,7 @@ describe('SchermataKaboomComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SchermataKaboom_dinamicaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SchermataKaboom_dinamicaComponent);
     component = fixture.componentInstance;

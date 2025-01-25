@@ -15,31 +15,26 @@ import {NgIf} from '@angular/common';
   standalone: true,
   styleUrl: './schermata-boom.component.css'
 })
-export class SchermataBoomComponent implements OnInit
-{
+export class SchermataBoomComponent implements OnInit {
   image: string = "";
   value: number = 0;
   imageWithoutChat: boolean = false;
   imageWithChat: boolean = false
   flag: boolean = false;
 
-  constructor(private bg:BackgroundService)
-  {
+  constructor(private bg: BackgroundService) {
     this.bg.changeBackground(this.image)
   }
 
-  randomNumberAndImage()
-  {
+  randomNumberAndImage() {
     this.value = Math.floor(Math.random() * 10) + 1;
 
-    if (this.value % 2 === 0)
-    {
+    if (this.value % 2 === 0) {
       this.image = "boom/schermata_boom1_Final.png"; // da sostituire con textbox
       this.imageWithoutChat = true;
       this.imageWithChat = false;
       this.flag = false;
-    } else
-    {
+    } else {
       this.image = "boom/schermata_boom2_Final.png";
       this.imageWithoutChat = false;
       this.imageWithChat = true;
@@ -48,8 +43,7 @@ export class SchermataBoomComponent implements OnInit
     this.bg.changeBackground(this.image)
   }
 
-  ngOnInit(): void
-  {
+  ngOnInit(): void {
     this.randomNumberAndImage()
   }
 }

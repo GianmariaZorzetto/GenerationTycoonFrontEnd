@@ -1,4 +1,3 @@
-export interface UserScoreDTOResp
-{
-    score:number;
+export interface UserScoreDTOResp {
+  score: number;
 }

@@ -1,5 +1,4 @@
-export interface UserUpdateScoreDTOReq
-{
-  id:number;
-  score:number;
+export interface UserUpdateScoreDTOReq {
+  id: number;
+  score: number;
 }

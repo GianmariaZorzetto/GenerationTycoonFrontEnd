@@ -63,7 +63,7 @@ export class SchermataRegistratiComponent {
     this.items[index].isHovered = false;
   }
 
-  // Metodo per selezionare la difficoltà (EASY,MEDIUM,HARD)
+  // Metodo per selezionare la difficoltà (EASY, MEDIUM, HARD)
   selectDifficulty(difficulty: string) {
     this.selectedDifficulty = difficulty;
     this.selectedButton = difficulty;
