@@ -26,17 +26,24 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
 
   solution: string
 
+  quizResult: { result: boolean, score: number }
+
   constructor(private bg: BackgroundService, private route: Router, private httpService: HttpService) {
     this.bg.changeBackground("brainj/schermata_brainj_finale.png")
     this.brainj = this.httpService.getSingleBrainj();
+    console.log(this.brainj)
     this.startDate = new Date()
     console.log(this.startDate)
     this.solution = ""
     this.richiesta = this.brainj.question
+    this.quizResult = {result: false, score: 0}
   }
 
   ngOnDestroy(): void {
-    this.failQuiz()
+    if (!this.quizResult.result)
+      this.httpService.loseLife()
+    this.httpService.quizCompleted()
+    this.httpService.quizResult = this.quizResult
   }
 
   @HostListener('window:message', ['$event'])
@@ -48,6 +55,9 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
 
   checkAnswer() {
     if (this.solution === this.brainj.answer) {
+      if (this.httpService.life == 0) {
+        this.quizResult = {result: true, score: 0}
+      }
       let endDate = new Date();
       let dto: UserScoreDTOReq = {
         difficulty: this.httpService.userLoginReqDto.difficulty,
@@ -57,22 +67,18 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
       }
       this.httpService.calculateScore(dto).subscribe({
         next: (res) => {
-          this.httpService.quizResult = {result: true, score: res.score}
+          this.quizResult = {result: true, score: res.score}
           this.route.navigate(["/brainj_dinamico_risultato"])
         },
         error: (err) => {
-          alert("Errore nel calcolo del punteggio")
+          alert("Errore nel calcolo del punteggio, annullamento del quiz.")
+          this.quizResult = {result: true, score: 0}
+          // Aumento di uno il numero di quiz in caso di fallimento nel calcolo dello score perché onDestroy scala il numero indipendentemente che abbia fatto giusto o meno.
+          this.httpService.numberOfQuiz += 1
+          this.route.navigate(["/brainj_dinamico_risultato"])
         }
       })
-    } else {
-      this.failQuiz();
     }
-  }
-
-  private failQuiz() {
-    this.httpService.quizResult = {result: false, score: 0}
-    this.httpService.quizCompleted()
-    this.httpService.loseLife()
     this.route.navigate(["/brainj_dinamico_risultato"])
   }
 }

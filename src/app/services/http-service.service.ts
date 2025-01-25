@@ -13,6 +13,9 @@ import {UserScoreDTOResp} from '../model/UserScoreDTOResp';
   providedIn: 'root'
 })
 export class HttpService {
+  set numberOfQuiz(value) {
+    this._numberOfQuiz = value;
+  }
   get quizResult(): { result: boolean; score: number } {
     return this._quizResult;
   }
@@ -126,7 +129,7 @@ export class HttpService {
 
   private generateRandomNumber(size: number): number {
     const randomNumber = Math.random();
-    return Math.floor(randomNumber * size - 1)
+    return Math.floor(randomNumber * (size - 1))
   }
 
 }
