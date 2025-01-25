@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {UserRegistrationDTOReq} from '../../model/UserRegistrationDTOReq';
 import {BackgroundService} from '../../../../services/background.service';
 import {Router, RouterLink} from '@angular/router';
@@ -6,6 +6,7 @@ import {HttpService} from '../../services/http-service.service';
 import {NgClass, NgIf} from '@angular/common';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {FormsModule} from '@angular/forms';
+import {UserResetDTOReq} from '../../model/UserResetDTOReq';
 
 @Component({
   selector: 'app-schermata-difficolta',
@@ -24,10 +25,9 @@ export class SchermataDifficoltaComponent {
 
   showPassword = true;
 
-  user: UserRegistrationDTOReq = {
-    email: "",
-    username: "",
-    password: "",
+  user: UserResetDTOReq = {
+    token: "",
+    id: 0,
     difficulty: "EASY" // Valore predefinito come stringa
   };
 
@@ -76,16 +76,24 @@ export class SchermataDifficoltaComponent {
   }
 
   // Metodo per gestire il salvataggio del nuovo utente
-  saveUser() {
-    console.log("Utente creato:", this.user);
+  resetUser() {
+    console.log("Da resettare:", this.user);
     // Chiamata al servizio HTTP per salvare l"utente
-    this.httpService.register(this.user).subscribe(() => {
-      this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
+    this.httpService.resetUserScore(this.user).subscribe({
+      next: (res) => {
+        this.httpService.resetUser(res)
+        this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
+      },
+      error: err => {
+        alert("Errore nel reset, riprova!");
+      }
     });
   }
 
-  constructor(private service: BackgroundService, private route: Router,private httpService: HttpService) {
+  constructor(private service: BackgroundService, private route: Router, private httpService: HttpService) {
     this.service.changeBackground("difficolta/difficolta.png");
+    this.user.id = this.httpService.userLoginReqDto.id
+    this.user.token = this.httpService.userLoginReqDto.token
   }
 
 }

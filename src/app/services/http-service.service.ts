@@ -83,6 +83,12 @@ export class HttpService {
   private _brainjs: BrainjDTOResp[];
   private _quizResult: { result: boolean, score: number }
   private _score: number
+  private difficultyToNumber = {
+    EASY: 3,
+    MEDIUM: 2,
+    HARD: 1
+  }
+
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
@@ -155,4 +161,12 @@ export class HttpService {
     return this.http.put<UserLoginDTOResp>("/api/users/reset", dto)
   }
 
+  resetUser(dto: UserLoginDTOResp) {
+    this.score = dto.score
+    // @ts-ignore
+    this.life = this.difficultyToNumber[dto.difficulty]
+    this.getBrainjs()
+    this.getKabooms()
+    this.userLoginReqDto = dto
+  }
 }

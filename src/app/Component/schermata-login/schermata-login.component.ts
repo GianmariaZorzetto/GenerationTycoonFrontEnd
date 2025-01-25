@@ -35,9 +35,8 @@ export class SchermataLoginComponent {
     this.httpService.login(this.user).subscribe(
       {
         next: (res) => {
+          this.httpService.resetUser(res)
           this.httpService.eatNoodle()
-          this.httpService.getBrainjs()
-          this.httpService.getKabooms()
           this.route.navigate(["/bedroom"])
         },
         error: (err) => {

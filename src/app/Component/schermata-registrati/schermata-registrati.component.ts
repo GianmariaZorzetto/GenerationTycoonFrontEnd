@@ -82,10 +82,7 @@ export class SchermataRegistratiComponent {
     this.httpService.register(this.user).subscribe(
       {
         next: (res) => {
-          // @ts-ignore
-          this.httpService.life = this.difficultyToNumber[res.difficulty]
-          this.httpService.getKabooms()
-          this.httpService.getBrainjs()
+          this.httpService.resetUser(res)
           this.route.navigate(["/benvenuto"])
         },
         error: (err) => {
