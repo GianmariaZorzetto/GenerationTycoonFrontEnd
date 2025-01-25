@@ -35,7 +35,7 @@ export class SchermataLoginComponent {
     this.httpService.login(this.user).subscribe(
       {
         next: (res) => {
-          this.httpService.resetUser(res)
+          this.httpService.reinitializeUser(res)
           this.httpService.eatNoodle()
           this.route.navigate(["/bedroom"])
         },

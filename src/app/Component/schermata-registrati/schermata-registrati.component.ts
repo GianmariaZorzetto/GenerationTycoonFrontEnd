@@ -82,7 +82,7 @@ export class SchermataRegistratiComponent {
     this.httpService.register(this.user).subscribe(
       {
         next: (res) => {
-          this.httpService.resetUser(res)
+          this.httpService.reinitializeUser(res)
           this.route.navigate(["/benvenuto"])
         },
         error: (err) => {

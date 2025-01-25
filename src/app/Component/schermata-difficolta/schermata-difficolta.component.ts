@@ -79,7 +79,7 @@ export class SchermataDifficoltaComponent {
     // Chiamata al servizio HTTP per salvare l"utente
     this.httpService.resetUserScore(this.user).subscribe({
       next: (res) => {
-        this.httpService.resetUser(res)
+        this.httpService.reinitializeUser(res)
         this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
       },
       error: err => {

@@ -19,19 +19,24 @@ import {NgForOf} from '@angular/common';
 })
 
 //cambiare immagine di sfondo, dimensioni diverse (vedi figma)
-export class LeaderboardComponent implements OnInit
-{
+export class LeaderboardComponent implements OnInit {
   allUsersLeaderboard: UserLeaderboardDTOResp[] = [];
 
-  constructor(private bg:BackgroundService, private httpService:HttpService) {
+  constructor(private bg: BackgroundService, private httpService: HttpService) {
     this.bg.changeBackground("stanza/leaderboardOpen.png");
   }
 
-  ngOnInit(): void
-  {
+  ngOnInit(): void {
     this.httpService.getAllLeaderBoard().subscribe({
       next: (data) => {
         this.allUsersLeaderboard = data;
+        this.allUsersLeaderboard.sort((a, b) => {
+          if (a.score > b.score)
+            return -1
+          if (a.score < b.score)
+            return 1
+          return 0
+        })
       },
       error: () => {
         console.log("Errrrrrrore");

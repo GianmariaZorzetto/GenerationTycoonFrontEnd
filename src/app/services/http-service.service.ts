@@ -161,7 +161,7 @@ export class HttpService {
     return this.http.put<UserLoginDTOResp>("/api/users/reset", dto)
   }
 
-  resetUser(dto: UserLoginDTOResp) {
+  reinitializeUser(dto: UserLoginDTOResp) {
     this.score = dto.score
     // @ts-ignore
     this.life = this.difficultyToNumber[dto.difficulty]
