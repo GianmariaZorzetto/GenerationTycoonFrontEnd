@@ -1,12 +1,16 @@
-<!--TODO SISTEMARLI NELLA POSIZIONE CORRETTA DELLA SCHERMATA-->
 <div id="graduationInfo">
-  <p>
+  <p posizione [x]="825" [y]="513" [w]="60" [h]="65" style="font-size: 48px;">
     {{ graduationInfo.username }}
   </p>
-  <p>
-    Livello sfida: {{ graduationInfo.difficulty }}
+  <p posizione [x]="825" [y]="660" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+    Livello sfida:
   </p>
-  <p>
+
+  <p posizione [x]="1480" [y]="660" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+    {{ graduationInfo.difficulty }}
+  </p>
+
+  <p posizione [x]="825" [y]="782" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
     Punteggio finale: {{ graduationInfo.score }}
   </p>
 </div>
