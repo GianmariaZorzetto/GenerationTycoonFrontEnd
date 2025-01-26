@@ -20,7 +20,7 @@ export class BedroomComponent {
     3: "/hearts/three_heart.svg"
   }
 
-  constructor(private bg: BackgroundService, private httpService: HttpService) {
+  constructor(private bg: BackgroundService, protected httpService: HttpService) {
     this.bg.changeBackground("stanza/cameretta.png");
   }
 

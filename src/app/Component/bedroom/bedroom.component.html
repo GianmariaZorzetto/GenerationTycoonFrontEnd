@@ -14,6 +14,9 @@
 
 <!--TODO METTERE IN POSIZIONE I CUORI CON LA RIPOSIZIONE-->
 <img [src]="showHearts()">
+<!--TODO METTERE IN POSIZIONE SCORE-->
+<img src="score/score_back.svg">
+<p class="pixelated-font">Score: {{ httpService.score }}</p>
 
 <a routerLink="/leaderboard">
   <img [nascosto]="true"
