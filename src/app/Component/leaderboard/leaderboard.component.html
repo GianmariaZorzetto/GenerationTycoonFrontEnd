@@ -3,26 +3,27 @@
        alt="LB">
 </a>
 
-<div class="leaderboard-container">
-  <div class="leaderboard-scroll">
-    <table>
-      <div style="width: fit-content; height: fit-content">
-        <tr class="row-leaderboard">
-          <th>POS</th>
-          <th>PUNTI</th>
-          <th>UTENTE</th>
-          <th>DIFFICOLTÀ</th>
-        </tr>
-      </div>
-      <div style="width: fit-content; height: fit-content"
-           *ngFor="let user of allUsersLeaderboard; let i = index" class="names">
-        <tr class="row-leaderboard">
-          <td>{{ i + 1 }}</td>
-          <td>{{ user.score }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.difficulty }}</td>
-        </tr>
-      </div>
+<div class="container mt-4 unscrollable">
+  <div class="table-container unscrollable">
+    <table
+      class="table table-dark table-hover mb-0 unscrollable">
+      <thead>
+      <tr>
+        <th scope="col">POS</th>
+        <th scope="col">PUNTI</th>
+        <th scope="col">UTENTE</th>
+        <th scope="col">DIFFICOLTÀ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of allUsersLeaderboard; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ row.score }}</td>
+        <td>{{ row.username }}</td>
+        <td>{{ row.difficulty == "EASY" ? "Facile" : row.difficulty == "MEDIUM" ? "Intermedio" : "Avanzato" }}</td>
+      </tr>
+      </tbody>
     </table>
   </div>
 </div>
+
