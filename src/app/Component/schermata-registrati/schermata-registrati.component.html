@@ -14,7 +14,7 @@
       [ngClass]="{'is-valid':email.valid,'is-invalid':email.invalid && email.dirty}"
       placeholder="Email"
       class="form-control mb-2 scontornato-input"
-      posizione [x]="767" [y]="188" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'"
+      posizione [x]="767" [y]="188" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'" [dimTesto]="32"
       [(ngModel)]="user!.email"
       required
       email>
@@ -25,7 +25,7 @@
       [ngClass]="{'is-valid':username.valid,'is-invalid':username.invalid && username.dirty}"
       placeholder="Username"
       class="form-control mb-2 scontornato-input"
-      posizione [x]="767" [y]="288" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'"
+      posizione [x]="767" [y]="288" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'" [dimTesto]="32"
       [(ngModel)]="user!.username"
       required>
     <input
@@ -36,7 +36,7 @@
       [type]="showPassword ? 'text' : 'password'"
       placeholder="*********"
       class="form-control mb-2 scontornato-input "
-      posizione [x]="767" [y]="388" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'"
+      posizione [x]="767" [y]="388" [w]="629" [h]="68" [centroMassa]="true" [autore]="'R'" [dimTesto]="32"
       [(ngModel)]="user!.password"
       required
       pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[?!@$ %^&*-]).{8,}">
