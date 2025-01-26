@@ -31,3 +31,7 @@
   overflow: hidden;
   font-family: 'Chalkduster', serif;
 }
+
+.row-leaderboard {
+  margin: 20%;
+}

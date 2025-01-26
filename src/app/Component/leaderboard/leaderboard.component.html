@@ -7,7 +7,7 @@
   <div class="leaderboard-scroll">
     <table>
       <div style="width: fit-content; height: fit-content">
-        <tr class="">
+        <tr class="row-leaderboard">
           <th>POS</th>
           <th>PUNTI</th>
           <th>UTENTE</th>
@@ -16,7 +16,7 @@
       </div>
       <div style="width: fit-content; height: fit-content"
            *ngFor="let user of allUsersLeaderboard; let i = index" class="names">
-        <tr>
+        <tr class="row-leaderboard">
           <td>{{ i + 1 }}</td>
           <td>{{ user.score }}</td>
           <td>{{ user.username }}</td>
