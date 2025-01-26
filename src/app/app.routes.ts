@@ -39,29 +39,30 @@ import {
 import {
   SchermataBrainjRisultatoComponent
 } from './Component/schermata-brainj-risultato/schermata-brainj-risultato.component';
+import {authGuard} from './services/auth.guard';
 
 
 export const routes: Routes = [
   {path: '', component: SchermataInizialeComponent},
   {path: 'login', component: SchermataLoginComponent},
   {path: 'register', component: SchermataRegistratiComponent},
-  {path: 'desktop', component: SchermataDesktopComponent},
-  {path: 'boom', component: SchermataBoomComponent},
-  { path: 'bedroom', component: BedroomComponent},
-  { path: 'leaderboard', component: LeaderboardComponent},
-  { path: 'greenBook', component: LibroVerdeComponent},
-  { path: 'blueBook', component: LibroBluComponent},
-  {path: 'tutorial', component: SchermataTutorialComponent},
-  {path: 'brainj', component: SchermataBrainjComponent},
-  {path: 'benvenuto', component: SchermataBenvenutoComponent},
-  {path: 'graduation', component: SchermataGraduationComponent},
-  {path: 'lose', component: SchermataLoseComponent},
-  {path: 'kaboom', component: SchermataKaboomComponent}, //kaboom stock per desktop
-  {path: 'difficolta', component: SchermataDifficoltaComponent},
-  {path: 'kaboom_dinamico', component: SchermataKaboom_dinamicaComponent}, //Kaboom per task
-  {path: 'kaboom_dinamico_risultato', component: SchermataKaboomRisultatoComponent}, //risultato Kaboom per task
-  {path: 'brainj_dinamico', component: SchermataBrainj_dinamicaComponent}, //brainj per task
-  {path: 'brainj_dinamico_risultato', component: SchermataBrainjRisultatoComponent } //risultato brainj per task
+  {path: 'desktop', component: SchermataDesktopComponent, canActivate:[authGuard]},
+  {path: 'boom', component: SchermataBoomComponent, canActivate:[authGuard]},
+  { path: 'bedroom', component: BedroomComponent, canActivate:[authGuard]},
+  { path: 'leaderboard', component: LeaderboardComponent, canActivate:[authGuard]},
+  { path: 'greenBook', component: LibroVerdeComponent, canActivate:[authGuard]},
+  { path: 'blueBook', component: LibroBluComponent, canActivate:[authGuard]},
+  {path: 'tutorial', component: SchermataTutorialComponent, canActivate:[authGuard]},
+  {path: 'brainj', component: SchermataBrainjComponent, canActivate:[authGuard]},
+  {path: 'benvenuto', component: SchermataBenvenutoComponent, canActivate:[authGuard]},
+  {path: 'graduation', component: SchermataGraduationComponent, canActivate:[authGuard]},
+  {path: 'lose', component: SchermataLoseComponent, canActivate:[authGuard]},
+  {path: 'kaboom', component: SchermataKaboomComponent, canActivate:[authGuard]}, //kaboom stock per desktop
+  {path: 'difficolta', component: SchermataDifficoltaComponent, canActivate:[authGuard]},
+  {path: 'kaboom_dinamico', component: SchermataKaboom_dinamicaComponent, canActivate:[authGuard]}, //Kaboom per task
+  {path: 'kaboom_dinamico_risultato', component: SchermataKaboomRisultatoComponent, canActivate:[authGuard]}, //risultato Kaboom per task
+  {path: 'brainj_dinamico', component: SchermataBrainj_dinamicaComponent, canActivate:[authGuard]}, //brainj per task
+  {path: 'brainj_dinamico_risultato', component: SchermataBrainjRisultatoComponent, canActivate:[authGuard] } //risultato brainj per task
 
 
 ];

@@ -11,13 +11,16 @@
 <!--<a routerLink="/leaderboard" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" *ngIf="isHovered">-->
 <!--    <img posizione [x]="805" [y]="150" [w]="560" [h]="535" src="sfondi_schermate/leaderboard.png" alt="LB">-->
 <!--</a>-->
+<!--TODO RIDIMENSIONARE IMMAGINE CUORI-->
+<div posizione [x]="25" [y]="25" [w]="370" [h]="140" [autore]="'F'">
+  <img [src]="showHearts()">
+</div>
 
-<!--TODO METTERE IN POSIZIONE I CUORI CON LA RIPOSIZIONE-->
-<img [src]="showHearts()">
-<!--TODO METTERE IN POSIZIONE SCORE-->
-<img src="score/score_back.svg">
-<p class="pixelated-font">Score: {{ httpService.score }}</p>
+<!--Immagine score-->
+<img posizione [x]="27" [y]="185" [w]="280" [h]="90" [autore]="'F'" src="score/contenitoreScore.png">
+<p posizione [x]="66" [y]="269" [w]="600" [dimTesto]="50" class="pixelated-font">Score: {{ httpService.score }}</p>
 
+<!--Immagine e rotta per la LeaderBoard-->
 <a routerLink="/leaderboard">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
