@@ -49,9 +49,14 @@ body {
   background-size: contain;
 }
 
-.sovrapposto
-{
+.sovrapposto {
   position: absolute;
   transform: translate(-50%, -50%);
 }
 
+@font-face {
+  font-family: 'Chalkduster'; /* Name of the font */
+  src: url('/fonts/Chalkduster.ttf') format('truetype'); /* Path to the font file */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}
