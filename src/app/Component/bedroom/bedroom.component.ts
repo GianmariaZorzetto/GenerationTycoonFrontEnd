@@ -17,7 +17,8 @@ export class BedroomComponent {
   private lifeToAsset = {
     1: "/hearts/one_heart.svg",
     2: "/hearts/two_heart.svg",
-    3: "/hearts/three_heart.svg"
+    3: "/hearts/three_heart.svg",
+    0: ""
   }
 
   constructor(private bg: BackgroundService, protected httpService: HttpService) {

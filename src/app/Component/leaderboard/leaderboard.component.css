@@ -5,12 +5,10 @@
   flex-direction: column;
   align-items: flex-start; /* Per centrare orizzontalmente */
   justify-content: center; /* Per centrare verticalmente */
-  padding: 20px; /* Margine interno per maggiore spazio */
-  margin-bottom: 10px; /* Spazio tra i vari utenti */
 }
 
 .leaderboard-scroll {
-  background-color: #0957A2;
+  background-color: transparent;
   opacity: 0.5;
   max-height: 530px; /* Limita l'altezza del contenitore */
   overflow-y: scroll; /* Abilita lo scrolling verticale */
@@ -30,7 +28,6 @@
   transform: translate(-50%, -50%); /* Centra esattamente il contenitore */
   width: 50%; /* Larghezza dinamica */
   /*max-width: 600px; !* Limita la larghezza massima *!*/
-  padding: 20px; /* Spazio interno */
   overflow: hidden;
   font-family: 'Chalkduster', serif;
 }
