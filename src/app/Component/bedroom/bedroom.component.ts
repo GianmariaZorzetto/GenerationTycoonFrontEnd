@@ -29,4 +29,13 @@ export class BedroomComponent {
     // @ts-ignore
     return this.lifeToAsset[`${hearts}`]
   }
+
+  eatNoodle() {
+    if (!this.httpService.availableNoodle()) {
+      alert("Non hai noodle a tua disposizione.")
+      return
+    }
+    this.httpService.eatNoodle()
+    this.httpService.life += 1
+  }
 }

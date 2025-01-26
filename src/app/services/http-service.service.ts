@@ -89,6 +89,11 @@ export class HttpService {
     MEDIUM: 2,
     HARD: 1
   }
+  private difficultyToNoodle = {
+    EASY: 1,
+    MEDIUM: 1,
+    HARD: 0,
+  }
 
 
   constructor(private http: HttpClient) {
@@ -166,6 +171,8 @@ export class HttpService {
     this.score = dto.score
     // @ts-ignore
     this.life = this.difficultyToNumber[dto.difficulty]
+    // @ts-ignore
+    this._noodleOk = this.difficultyToNoodle[dto.difficulty]
     this.getBrainjs()
     this.getKabooms()
     this.userLoginReqDto = dto
