@@ -16,6 +16,14 @@ import {UserResetDTOReq} from '../model/UserResetDTOReq';
   providedIn: 'root'
 })
 export class HttpService {
+  get graduationInfo(): UserLeaderboardDTOResp {
+    return this._graduationInfo;
+  }
+
+  set graduationInfo(value: UserLeaderboardDTOResp) {
+    this._graduationInfo = value;
+  }
+
   get score(): number {
     return this._score;
   }
@@ -94,7 +102,7 @@ export class HttpService {
     MEDIUM: 1,
     HARD: 0,
   }
-
+  private _graduationInfo: UserLeaderboardDTOResp
 
   constructor(private http: HttpClient) {
     this._userLoginReqDto = {
@@ -107,6 +115,7 @@ export class HttpService {
     this._numberOfQuiz = 10;
     this._quizResult = {result: false, score: 0}
     this._score = 0
+    this._graduationInfo = {difficulty: '', score: 0, username: ''}
   }
 
   getSingleBrainj(): BrainjDTOResp {
@@ -177,5 +186,6 @@ export class HttpService {
     this.getKabooms()
     this.userLoginReqDto = dto
     this.numberOfQuiz = 10
+    this._graduationInfo = {difficulty: '', score: 0, username: ''}
   }
 }
