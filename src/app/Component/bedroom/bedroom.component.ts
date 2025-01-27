@@ -12,12 +12,12 @@ import {HttpService} from '../../services/http-service.service';
   standalone: true,
   styleUrl: './bedroom.component.css'
 })
-export class BedroomComponent {
-
+export class BedroomComponent
+{
   private lifeToAsset = {
-    1: "/hearts/one_heart.svg",
-    2: "/hearts/two_heart.svg",
-    3: "/hearts/three_heart.svg",
+    1: "/hearts/singola_vita.png",
+    2: "/hearts/vita_doppia.png",
+    3: "/hearts/vita_tripla.png",
     0: ""
   }
 

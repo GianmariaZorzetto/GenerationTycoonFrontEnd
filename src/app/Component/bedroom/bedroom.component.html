@@ -12,15 +12,17 @@
 <!--    <img posizione [x]="805" [y]="150" [w]="560" [h]="535" src="sfondi_schermate/leaderboard.png" alt="LB">-->
 <!--</a>-->
 <!--TODO RIDIMENSIONARE IMMAGINE CUORI-->
-<div posizione [x]="25" [y]="25" [w]="370" [h]="140" [autore]="'F'">
-  <img [src]="showHearts()">
-</div>
+<div posizione [x]="15" [y]="25" [w]="400" [h]="300" [autore]="'F'">
+  <img *ngIf="showHearts() === '/hearts/vita_tripla.png'" posizione [x]="30" [y]="25" [w]="300" [h]="100" [src]="showHearts()">
+  <img *ngIf="showHearts() === '/hearts/vita_doppia.png'" posizione [x]="30" [y]="25" [w]="200" [h]="100" [src]="showHearts()">
+  <img *ngIf="showHearts() === '/hearts/singola_vita.png'" posizione [x]="30" [y]="25" [w]="100" [h]="100" [src]="showHearts()">
 
 <!--Immagine score-->
-<img posizione [x]="27" [y]="185" [w]="280" [h]="90" [autore]="'F'"
-     src="score/contenitoreScore.png">
-<p posizione [x]="66" [y]="269" [w]="600" [dimTesto]="50" class="pixelated-font">
-  Score: {{ httpService.score }}</p>
+  <img posizione [x]="24" [y]="100" [w]="200" [h]="60" [autore]="'F'"
+       src="score/scoreBg.png">
+  <p posizione [x]="48" [y]="143" [w]="600" [dimTesto]="38" class="pixelated-font">
+    Score: {{ httpService.score }}</p>
+</div>
 
 <p class="todo" posizione [x]="2220" [y]="295" [w]="280" [h]="90" style="white-space: nowrap;">
   QUIZ RIMANENTI:
