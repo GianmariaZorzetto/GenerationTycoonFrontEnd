@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {BackgroundService} from '../../services/background.service';
+import {AudioLoopService} from './services/audio-loop.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit, OnDestroy
   title = 'GenerationTycoonFrontEnd';
   private confirmUnload = false;
 
-  constructor(private bg: BackgroundService) {
+  constructor(private bg: BackgroundService,private audioService: AudioLoopService) {
   }
 
   cambia() {
@@ -40,10 +41,15 @@ export class AppComponent implements OnInit, OnDestroy
   };
 
   ngOnInit(): void {
-    this.enableUnloadConfirmation(); // Attiva la conferma di uscita
+    this.audioService.playLoop()
+    this.audioService.setVolume(0.0)
+    this.enableUnloadConfirmation();// Attiva la conferma di uscita
   }
 
   ngOnDestroy(): void {
     this.disableUnloadConfirmation(); // Disattiva la conferma di uscita
   }
+
+
+
 }

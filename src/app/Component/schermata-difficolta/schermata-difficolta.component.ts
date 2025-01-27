@@ -80,7 +80,7 @@ export class SchermataDifficoltaComponent {
     this.httpService.resetUserScore(this.user).subscribe({
       next: (res) => {
         this.httpService.reinitializeUser(res)
-        this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
+          this.route.navigate(["/benvenuto"]);  // Naviga alla pagina di benvenuto dopo il salvataggio
       },
       error: err => {
         alert("Errore nel reset, riprova!");

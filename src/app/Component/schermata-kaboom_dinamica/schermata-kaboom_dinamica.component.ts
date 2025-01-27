@@ -37,13 +37,6 @@ export class SchermataKaboom_dinamicaComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     console.log("SONO IN ONDESTROY")
-    if (!this.quizResult.result)
-      // LOSE LIFE MI RESTITUISCE TRUE SE L'UTENTE È MORTO
-      // FALSE ALTRIMENTI
-      // CONTROLLA INOLTRE CHE NON TI FACCIA ANDARE SULLA SCHERMATA DI LOSE
-      // NEL CASO IN CUI TU SIA IN MODALITÀ LOGIN
-      if (this.httpService.loseLife())
-        this.route.navigate(["/lose"])
     this.httpService.quizCompleted()
     this.httpService.quizResult = this.quizResult
     this.httpService.score += this.quizResult.score
@@ -80,7 +73,14 @@ export class SchermataKaboom_dinamicaComponent implements OnDestroy {
         }
       })
     } else {
-      this.route.navigate(["/kaboom_dinamico_risultato"])
+      // LOSE LIFE MI RESTITUISCE TRUE SE L'UTENTE È MORTO
+      // FALSE ALTRIMENTI
+      // CONTROLLA INOLTRE CHE NON TI FACCIA ANDARE SULLA SCHERMATA DI LOSE
+      // NEL CASO IN CUI TU SIA IN MODALITÀ LOGIN
+      if (this.httpService.loseLife())
+        this.route.navigate(["/lose"])
+      else
+        this.route.navigate(["/kaboom_dinamico_risultato"])
     }
   }
 }

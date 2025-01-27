@@ -115,7 +115,7 @@ export class HttpService {
     this._noodleOk = 1;
     this._kabooms = [];
     this._brainjs = [];
-    this._numberOfQuiz = 3;
+    this._numberOfQuiz = 10;
     this._quizResult = {result: false, score: 0}
     this._score = 0
     this._graduationInfo = {difficulty: '', score: 0, username: ''}
@@ -179,16 +179,16 @@ export class HttpService {
     return this.http.put<UserLoginDTOResp>("/api/users/reset", dto)
   }
 
-  reinitializeUser(dto: UserLoginDTOResp) {
-    this.score = dto.score
+  reinitializeUser(dtologin: UserLoginDTOResp) {
+    this.score = dtologin.score
     // @ts-ignore
-    this.life = this.difficultyToNumber[dto.difficulty]
+    this.life = this.difficultyToNumber[dtologin.difficulty]
     // @ts-ignore
-    this._noodleOk = this.difficultyToNoodle[dto.difficulty]
+    this._noodleOk = this.difficultyToNoodle[dtologin.difficulty]
     this.getBrainjs()
     this.getKabooms()
-    this.userLoginReqDto = dto
-    this.numberOfQuiz = 3
+    this.userLoginReqDto = dtologin
+    this.numberOfQuiz = 10
     this._graduationInfo = {difficulty: '', score: 0, username: ''}
   }
 }
