@@ -41,4 +41,27 @@ export class BedroomComponent
     this.audioService.playNoodleSound()
     this.httpService.life += 1
   }
+
+  blueBookSound() {
+    this.audioService.playPagesSound()
+  }
+
+  greenBookSound() {
+    this.audioService.playPagesSound()
+  }
+
+  computerSound() {
+    this.audioService.playComputerSound()
+  }
+
+  leaderboardSound() {
+    this.audioService.playLeaderboardSound()
+  }
+
+  radioSound() {
+    this.audioService.playComputerSound()
+    this.audioService.stop()
+  }
+
+
 }

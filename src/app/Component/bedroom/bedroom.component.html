@@ -36,6 +36,7 @@
 <a routerLink="/leaderboard">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
+       (click)="leaderboardSound()"
        posizione [x]="805" [y]="150" [w]="560" [h]="515"
        src="sfondi_schermate/bottoni/leaderboard.png" alt="LB">
 </a>
@@ -51,6 +52,7 @@
 <a routerLink="/blueBook">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
+       (click)="blueBookSound()"
        posizione [x]="195" [y]="545" [w]="46" [h]="160"
        src="sfondi_schermate/bottoni/libroBlue.png" alt="libroBlu">
 </a>
@@ -58,6 +60,7 @@
 <a routerLink="/greenBook">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
+       (click)="greenBookSound()"
        posizione [x]="430" [y]="320" [w]="46" [h]="160"
        src="sfondi_schermate/bottoni/libroVerde.png" alt="libroVerde">
 </a>
@@ -65,6 +68,7 @@
 <a routerLink="/desktop">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
+       (click)="computerSound()"
        posizione [x]="1584" [y]="450" [w]="446" [h]="315"
        src="sfondi_schermate/bottoni/computerIconFixed.png" alt="computer">
 </a>
@@ -72,6 +76,7 @@
 <a routerLink="/difficolta">
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
+       (click)="computerSound()"
        posizione [x]="820" [y]="660" [w]="45" [h]="45"
        src="sfondi_schermate/bottoni/bottoneRosso.png" alt="bottoneRosso">
 </a>
@@ -79,7 +84,7 @@
 <a>
   <img [nascosto]="true"
        [style.transition]="'opacity 0.1s'"
-
+       (click)="radioSound()"
        posizione [x]="412" [y]="999" [w]="210" [h]="185"
        src="sfondi_schermate/bottoni/radio.png" alt="radio">
 </a>

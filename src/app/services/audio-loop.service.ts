@@ -61,7 +61,7 @@ export class AudioLoopService {
     let appAudio = new Audio(`suoni/clickApplications.mp3`);
 
     appAudio.loop = false;
-    appAudio.volume = 0.03;
+    appAudio.volume = 0.3;
     appAudio.play().catch((error) => {
       console.log('Errore durante la riproduzione dell’audio:', error);
     });
@@ -71,7 +71,7 @@ export class AudioLoopService {
     let compAudio = new Audio(`suoni/computer.mp3`);
 
     compAudio.loop = false;
-    compAudio.volume = 0.03;
+    compAudio.volume = 0.3;
     compAudio.play().catch((error) => {
       console.log('Errore durante la riproduzione dell’audio:', error);
     });
@@ -81,7 +81,7 @@ export class AudioLoopService {
     let lbAudio = new Audio(`suoni/leaderboard.mp3`);
 
     lbAudio.loop = false;
-    lbAudio.volume = 0.03;
+    lbAudio.volume = 0.8;
     lbAudio.play().catch((error) => {
       console.log('Errore durante la riproduzione dell’audio:', error);
     });
@@ -91,7 +91,7 @@ export class AudioLoopService {
     let bookAudio = new Audio(`suoni/pages.mp3`);
 
     bookAudio.loop = false;
-    bookAudio.volume = 0.03;
+    bookAudio.volume = 0.8;
     bookAudio.play().catch((error) => {
       console.log('Errore durante la riproduzione dell’audio:', error);
     });
