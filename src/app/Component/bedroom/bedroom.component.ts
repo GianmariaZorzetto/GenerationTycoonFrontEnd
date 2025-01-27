@@ -38,7 +38,7 @@ export class BedroomComponent
       return
     }
     this.httpService.eatNoodle()
-    this.audioService.playLoopNoodle()
+    this.audioService.playNoodleSound()
     this.httpService.life += 1
   }
 }

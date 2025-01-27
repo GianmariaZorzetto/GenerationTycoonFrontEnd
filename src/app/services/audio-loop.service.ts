@@ -47,7 +47,7 @@ export class AudioLoopService {
     }
   }
 
-  playLoopNoodle(): void {
+  playNoodleSound(): void {
 
     let audio = new Audio(`suoni/noodles.mp3`);
     audio.loop = false; // Imposta il loop continuo
@@ -57,4 +57,43 @@ export class AudioLoopService {
     });
   }
 
+  playApplicationSound(): void {
+    let appAudio = new Audio(`suoni/clickApplications.mp3`);
+
+    appAudio.loop = false;
+    appAudio.volume = 0.03;
+    appAudio.play().catch((error) => {
+      console.log('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
+
+  playComputerSound(): void {
+    let compAudio = new Audio(`suoni/computer.mp3`);
+
+    compAudio.loop = false;
+    compAudio.volume = 0.03;
+    compAudio.play().catch((error) => {
+      console.log('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
+
+  playLeaderboardSound(): void {
+    let lbAudio = new Audio(`suoni/leaderboard.mp3`);
+
+    lbAudio.loop = false;
+    lbAudio.volume = 0.03;
+    lbAudio.play().catch((error) => {
+      console.log('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
+
+  playPagesSound(): void {
+    let bookAudio = new Audio(`suoni/pages.mp3`);
+
+    bookAudio.loop = false;
+    bookAudio.volume = 0.03;
+    bookAudio.play().catch((error) => {
+      console.log('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
 }
