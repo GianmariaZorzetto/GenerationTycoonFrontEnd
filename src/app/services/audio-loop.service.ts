@@ -47,4 +47,14 @@ export class AudioLoopService {
     }
   }
 
+  playLoopNoodle(): void {
+
+    let audio = new Audio(`suoni/noodles.mp3`);
+    audio.loop = false; // Imposta il loop continuo
+    audio.volume = 0.3; // Imposta il volume (da 0.0 a 1.0)
+    audio.play().catch((error) => {
+      console.error('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
+
 }

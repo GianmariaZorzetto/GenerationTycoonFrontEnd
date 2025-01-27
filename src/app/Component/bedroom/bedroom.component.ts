@@ -4,6 +4,7 @@ import {BackgroundService} from '../../../../services/background.service';
 import {RouterLink} from "@angular/router";
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
 import {HttpService} from '../../services/http-service.service';
+import {AudioLoopService} from '../../services/audio-loop.service';
 
 @Component({
   selector: 'app-bedroom',
@@ -21,7 +22,7 @@ export class BedroomComponent
     0: ""
   }
 
-  constructor(private bg: BackgroundService, protected httpService: HttpService) {
+  constructor(private bg: BackgroundService, protected httpService: HttpService, private audioService: AudioLoopService) {
     this.bg.changeBackground("stanza/camerettaEtodo.png");
   }
 
@@ -37,6 +38,7 @@ export class BedroomComponent
       return
     }
     this.httpService.eatNoodle()
+    this.audioService.playLoopNoodle()
     this.httpService.life += 1
   }
 }
