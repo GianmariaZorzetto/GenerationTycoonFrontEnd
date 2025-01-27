@@ -22,7 +22,13 @@
 <p posizione [x]="66" [y]="269" [w]="600" [dimTesto]="50" class="pixelated-font">
   Score: {{ httpService.score }}</p>
 
-<p>Quiz rimanente: {{ httpService.numberOfQuiz }}</p>
+<p class="todo" posizione [x]="2220" [y]="295" [w]="280" [h]="90" style="white-space: nowrap;">
+  QUIZ RIMANENTI:
+</p>
+
+<p class="todo" posizione [x]="2220" [y]="332" [w]="280" [h]="90" >
+  {{ httpService.numberOfQuiz }}
+</p>
 
 <!--Immagine e rotta per la LeaderBoard-->
 <a routerLink="/leaderboard">
@@ -67,10 +73,3 @@
        posizione [x]="820" [y]="660" [w]="45" [h]="45"
        src="sfondi_schermate/bottoni/bottoneRosso.png" alt="bottoneRosso">
 </a>
-
-<!--<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">-->
-<!--  <img [nascosto]="true"-->
-<!--       [style.transition]="'opacity 0.1s'"-->
-<!--       posizione [x]="820" [y]="660" [w]="45" [h]="45"-->
-<!--       src="sfondi_schermate/bottoni/bottoneRosso.png" alt="bottoneRosso">-->
-<!--</a>-->

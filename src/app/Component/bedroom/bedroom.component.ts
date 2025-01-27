@@ -22,7 +22,7 @@ export class BedroomComponent {
   }
 
   constructor(private bg: BackgroundService, protected httpService: HttpService) {
-    this.bg.changeBackground("stanza/cameretta.png");
+    this.bg.changeBackground("stanza/camerettaEtodo.png");
   }
 
   showHearts(): string {
