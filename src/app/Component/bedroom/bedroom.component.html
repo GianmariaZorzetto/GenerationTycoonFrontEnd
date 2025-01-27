@@ -17,8 +17,12 @@
 </div>
 
 <!--Immagine score-->
-<img posizione [x]="27" [y]="185" [w]="280" [h]="90" [autore]="'F'" src="score/contenitoreScore.png">
-<p posizione [x]="66" [y]="269" [w]="600" [dimTesto]="50" class="pixelated-font">Score: {{ httpService.score }}</p>
+<img posizione [x]="27" [y]="185" [w]="280" [h]="90" [autore]="'F'"
+     src="score/contenitoreScore.png">
+<p posizione [x]="66" [y]="269" [w]="600" [dimTesto]="50" class="pixelated-font">
+  Score: {{ httpService.score }}</p>
+
+<p>Quiz rimanente: {{ httpService.numberOfQuiz }}</p>
 
 <!--Immagine e rotta per la LeaderBoard-->
 <a routerLink="/leaderboard">
