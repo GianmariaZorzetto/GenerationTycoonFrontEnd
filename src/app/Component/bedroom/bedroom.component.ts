@@ -60,7 +60,14 @@ export class BedroomComponent
 
   radioSound() {
     this.audioService.playComputerSound()
-    this.audioService.stop()
+    if(this.audioService.isPaused) {
+      this.audioService.resumeLoop()
+      this.audioService.isPaused = false;
+    }
+    else {
+      this.audioService.pauseLoop();
+      this.audioService.isPaused = true;
+    }
   }
 
 

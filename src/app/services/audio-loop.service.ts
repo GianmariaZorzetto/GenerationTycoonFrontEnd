@@ -7,6 +7,8 @@ export class AudioLoopService {
 
   private audio: HTMLAudioElement | null = null;
 
+  isPaused: boolean = false;
+
   constructor() {}
 
   /**
@@ -95,5 +97,17 @@ export class AudioLoopService {
     bookAudio.play().catch((error) => {
       console.log('Errore durante la riproduzione dell’audio:', error);
     });
+  }
+
+  pauseLoop(): void {
+    if (this.audio) {
+      this.audio.pause();
+      }
+  }
+
+  resumeLoop(): void {
+    if (this.audio) {
+      this.audio.play()
+    }
   }
 }
