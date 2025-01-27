@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
 import {HttpService} from '../../services/http-service.service';
 import {UserDTOLoginReq} from '../../model/UserDTOLoginReq';
+import {AudioLoopService} from '../../services/audio-loop.service';
 
 @Component({
   selector: 'app-schermata-login',
@@ -20,7 +21,7 @@ import {UserDTOLoginReq} from '../../model/UserDTOLoginReq';
   styleUrl: './schermata-login.component.css'
 })
 export class SchermataLoginComponent {
-  constructor(private backgroundService: BackgroundService, private route: Router, private httpService: HttpService) {
+  constructor(private backgroundService: BackgroundService, private route: Router, private httpService: HttpService, private audioService: AudioLoopService) {
     this.backgroundService.changeBackground("login/Sfondo_login.png")
   }
 
@@ -32,10 +33,13 @@ export class SchermataLoginComponent {
   }
 
   loginUser() {
+
     this.httpService.login(this.user).subscribe(
       {
         next: (res) => {
           this.httpService.reinitializeUser(res)
+          this.audioService.playLoop()
+          this.audioService.setVolume(0.05)
           this.httpService.life = 0
           this.httpService.eatNoodle()
           this.route.navigate(["/bedroom"])

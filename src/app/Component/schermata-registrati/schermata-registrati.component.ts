@@ -6,6 +6,7 @@ import {UserRegistrationDTOReq} from "../../model/UserRegistrationDTOReq";
 import {PosizionaDirective} from "../../direttive/posiziona.directive";
 import {NgClass, NgIf} from "@angular/common";
 import {HttpService} from "../../services/http-service.service";
+import {AudioLoopService} from '../../services/audio-loop.service';
 
 
 @Component({
@@ -78,11 +79,14 @@ export class SchermataRegistratiComponent {
 
   // Metodo per gestire il salvataggio del nuovo utente
   saveUser() {
+
     // Chiamata al servizio HTTP per salvare l"utente
     this.httpService.register(this.user).subscribe(
       {
         next: (res) => {
           this.httpService.reinitializeUser(res)
+          this.audioService.playLoop()
+          this.audioService.setVolume(0.05)
           this.route.navigate(["/benvenuto"])
         },
         error: (err) => {
@@ -91,7 +95,7 @@ export class SchermataRegistratiComponent {
       });
   }
 
-  constructor(private service: BackgroundService, private route: Router, private httpService: HttpService) {
+  constructor(private service: BackgroundService, private route: Router, private httpService: HttpService, private audioService: AudioLoopService) {
     this.service.changeBackground("register/schermata_registrazione.png");
   }
 }
