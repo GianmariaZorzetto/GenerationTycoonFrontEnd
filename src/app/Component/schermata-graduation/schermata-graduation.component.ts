@@ -3,11 +3,13 @@ import {BackgroundService} from '../../../../services/background.service';
 import {HttpService} from '../../services/http-service.service';
 import {UserLeaderboardDTOResp} from '../../model/UserLeaderboardDTOResp';
 import {PosizionaDirective} from '../../direttive/posiziona.directive';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-schermata-graduation',
   imports: [
-    PosizionaDirective
+    PosizionaDirective,
+    RouterLink
   ],
   templateUrl: './schermata-graduation.component.html',
   standalone: true,
