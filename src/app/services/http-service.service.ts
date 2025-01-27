@@ -115,7 +115,7 @@ export class HttpService {
     this._noodleOk = 1;
     this._kabooms = [];
     this._brainjs = [];
-    this._numberOfQuiz = 3;
+    this._numberOfQuiz = 10;
     this._quizResult = {result: false, score: 0}
     this._score = 0
     this._graduationInfo = {difficulty: '', score: 0, username: ''}
@@ -188,7 +188,7 @@ export class HttpService {
     this.getBrainjs()
     this.getKabooms()
     this.userLoginReqDto = dto
-    this.numberOfQuiz = 3
+    this.numberOfQuiz = 10
     this._graduationInfo = {difficulty: '', score: 0, username: ''}
   }
 }
