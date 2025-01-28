@@ -23,7 +23,7 @@ export class BedroomComponent
   }
 
   constructor(private bg: BackgroundService, protected httpService: HttpService, private audioService: AudioLoopService) {
-    this.bg.changeBackground("stanza/camerettaFinale.png");
+    this.bg.changeBackground("stanza/camerettaFinaleCat.png");
   }
 
   showHearts(): string {
@@ -70,5 +70,8 @@ export class BedroomComponent
     }
   }
 
+  mayaSound() {
+    this.audioService.playMayaSound()
+  }
 
 }

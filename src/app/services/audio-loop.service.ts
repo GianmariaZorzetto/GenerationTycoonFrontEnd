@@ -99,6 +99,16 @@ export class AudioLoopService {
     });
   }
 
+  playMayaSound():void {
+    let mayaAudio = new Audio(`suoni/maya.mp3`);
+
+    mayaAudio.loop = false;
+    mayaAudio.volume = 0.8;
+    mayaAudio.play().catch((error) => {
+      console.log('Errore durante la riproduzione dell’audio:', error);
+    });
+  }
+
   pauseLoop(): void {
     if (this.audio) {
       this.audio.pause();
