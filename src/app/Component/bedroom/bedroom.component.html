@@ -17,7 +17,7 @@
   QUIZ RIMANENTI:
 </p>
 
-<p *ngIf="httpService.numberOfQuiz < 0" class="todo" posizione [x]="2220" [y]="332" [w]="280"
+<p *ngIf="httpService.numberOfQuiz > 0" class="todo" posizione [x]="2220" [y]="332" [w]="280"
    [h]="90">
   {{ httpService.numberOfQuiz }}
 </p>

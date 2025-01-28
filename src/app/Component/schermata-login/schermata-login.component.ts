@@ -41,6 +41,7 @@ export class SchermataLoginComponent {
           this.audioService.playLoop()
           this.audioService.setVolume(0.05)
           this.httpService.life = 0
+          this.httpService.numberOfQuiz = -1
           this.httpService.eatNoodle()
           this.route.navigate(["/bedroom"])
         },

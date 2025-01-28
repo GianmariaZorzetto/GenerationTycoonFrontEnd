@@ -73,7 +73,7 @@ export class SchermataBrainj_dinamicaComponent implements OnDestroy {
       let dto: UserScoreDTOReq = {
         difficulty: this.httpService.userLoginReqDto.difficulty,
         endTime: endDate,
-        hp: this.httpService.life,
+        hp: this.httpService.life + 3,
         startTime: this.startDate
       }
       this.httpService.calculateScore(dto).subscribe({
