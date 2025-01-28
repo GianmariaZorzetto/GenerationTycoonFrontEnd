@@ -24,9 +24,9 @@ export class SchermataGraduationComponent {
     this.graduationInfo = this.httpService.graduationInfo
   }
 
-  setViteZero(){
-    this.httpService.life=0;
-    this.httpService.numberOfQuiz=1;
+  setViteZero() {
+    this.httpService.life = 0;
+    this.httpService.numberOfQuiz = -1;
     this.router.navigate(['/leaderboard']);
 
   }
