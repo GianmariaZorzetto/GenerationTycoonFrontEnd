@@ -1,0 +1,26 @@
+/* src/app/button/button.component.css */
+.btn {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  border: none;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#lavagna, #lavagnaDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.pixelated-font {
+  font-size: 6rem;
+  font-family: 'Pixelify Sans', serif;
+}
+
+.todo{
+  font-size: 0.67rem;
+  font-family: 'Comic Sans MS', serif;
+}

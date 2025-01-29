@@ -1,0 +1,47 @@
+<a routerLink="/desktop">
+  <img
+    posizione
+    [x]="1753.6"
+    [y]="35"
+    [w]="18"
+    [h]="18"
+    [autore]="'F'"
+    [centroMassa]="true"
+    [hoverabile]="true"
+    src="/sfondi_schermate/boom/cross-group.svg" alt="button">
+</a>
+
+<div class="kaboom-hint-box"
+     posizione [x]="1665" [y]="157" [w]="213" [h]="140" [centroMassa]="true" [autore]="'N'">
+  <p>Questo è solo un Kaboom di prova, torna alla schermata Boom per ricevere una task da
+    Stefano-San!</p>
+</div>
+
+
+<div class="container d-flex flex-column align-items-center vh-100">
+  <!-- Blocco per la domanda -->
+  <div posizione [x]="465" [y]="87" [w]="970" [h]="128" [autore]="'N'"
+       class="question-box mb-5 text-center">
+    Ti stai divertendo con questo gioco?
+  </div>
+
+  <!--  &lt;!&ndash; Contenitore per i bottoni delle risposte &ndash;&gt;-->
+  <div class="answers-grid">
+    <button posizione [x]="560" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'"
+            [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input"
+            style="background-color: #960056;">Attento, la risposta giusta è la blu!
+    </button>
+    <button posizione [x]="1380" [hoverabile]="true" [y]="620" [w]="760" [h]="135" [autore]="'N'"
+            [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input"
+            style="background-color: #0957A2;">Hmm, la risposta esatta è la gialla!
+    </button>
+    <button posizione [x]="560" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'"
+            [centroMassa]="true" [mFactor]="1.02" class="btn answer-button left scontornato-input"
+            style="background-color: #C07402;">Decisamente! (Spoiler: questa è la risposta corretta)
+    </button>
+    <button posizione [x]="1380" [hoverabile]="true" [y]="770" [w]="760" [h]="135" [autore]="'N'"
+            [centroMassa]="true" [mFactor]="1.02" class="btn answer-button right scontornato-input"
+            style="background-color: #007263;">La risposta giusta è sicuramente la rossa!
+    </button>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<a routerLink="/desktop">
+  <img
+    posizione
+    [x]="1760"
+    [y]="35"
+    [w]="22"
+    [h]="22"
+    [autore]="'F'"
+    [centroMassa]="true"
+    [hoverabile]="true"
+    src="sfondi_schermate/boom/cross-group.svg" alt="button">
+</a>
+<div class="d-flex container">
+  <div class="col">
+
+  </div>
+  <div class="col">
+    <iframe
+      posizione
+      [x]="1079"
+      [y]="490"
+      [w]="1313"
+      [h]="876"
+      [autore]="'F'"
+      [centroMassa]="true"
+      frameBorder="0"
+      src="https://onecompiler.com/embed/java?theme=dark&listenToEvents=true&codeChangeEvent=true&hideTitle=true&hideStdin=true&hideLanguageSelection=true&hideNew=true&hideNewFileOption=true"
+    ></iframe>
+  </div>
+</div>
+
+<a (click)="checkAnswer()">
+  <img
+    posizione
+    [x]="294"
+    [y]="750"
+    [w]="211"
+    [h]="44"
+    [autore]="'F'"
+    [centroMassa]="true"
+    [hoverabile]="true"
+    src="sfondi_schermate/bottoni/consegna_brainj.png" alt="button">
+</a>
+
+
+<p posizione [x]="394" [y]="590" [w]="275" [h]="628" [centroMassa]="true"
+   style="color: #64b5f6; width: 243px;
+   max-height: 500px; overflow-y: auto; word-wrap: break-word;">
+  {{ richiesta }}
+</p>

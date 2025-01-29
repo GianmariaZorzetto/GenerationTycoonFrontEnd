@@ -1,0 +1,28 @@
+<a routerLink="/desktop">
+  <img
+    posizione
+    [x]="1753.6"
+    [y]="35"
+    [w]="18"
+    [h]="18"
+    [autore]="'F'"
+    [centroMassa]="true"
+    [hoverabile]="true"
+    src="/sfondi_schermate/boom/cross-group.svg" alt="button">
+</a>
+
+<p posizione [autore]="'N'" [x]="725" [y]="418" [w]="550" [h]="408"
+   style="color: #ffffff; font-size: 6rem; font-family: 'Pixelify Sans', serif;
+   overflow-y: auto; word-wrap: break-word;" *ngIf="quizResult.result">
+  Corretto!
+</p>
+<p posizione [autore]="'N'" [x]="727" [y]="415" [w]="550" [h]="408"
+   style="color: #ffffff; font-size: 6rem; font-family: 'Pixelify Sans', serif;
+   overflow-y: auto; word-wrap: break-word;" *ngIf="!quizResult.result">
+  Sbagliato!
+</p>
+<p posizione [autore]="'N'" [x]="1110" [y]="308" [w]="550" [h]="408"
+   style="color: #ffffff; font-size: 2.5rem; font-family: 'Pixelify Sans', serif;
+   overflow-y: auto; word-wrap: break-word;">
+  {{ quizResult.score }}
+</p>

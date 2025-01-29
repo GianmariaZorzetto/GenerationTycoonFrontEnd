@@ -1,0 +1,88 @@
+<div posizione [x]="15" [y]="25" [w]="400" [h]="300" [autore]="'F'">
+  <img *ngIf="showHearts() === '/hearts/vita_tripla.png'" posizione [x]="30" [y]="25" [w]="300"
+       [h]="100" [src]="showHearts()">
+  <img *ngIf="showHearts() === '/hearts/vita_doppia.png'" posizione [x]="30" [y]="25" [w]="200"
+       [h]="100" [src]="showHearts()">
+  <img *ngIf="showHearts() === '/hearts/singola_vita.png'" posizione [x]="30" [y]="25" [w]="120"
+       [h]="100" [src]="showHearts()">
+
+  <!--Immagine score-->
+  <img posizione [x]="24" [y]="100" [w]="200" [h]="60" [autore]="'F'"
+       src="score/scoreBg.png">
+  <p posizione [x]="48" [y]="143" [w]="600" [dimTesto]="38" class="pixelated-font">
+    Score: {{ httpService.score }}</p>
+</div>
+
+<p class="todo" posizione [x]="2220" [y]="295" [w]="280" [h]="90" style="white-space: nowrap;">
+  QUIZ RIMANENTI:
+</p>
+
+<p *ngIf="httpService.numberOfQuiz > 0" class="todo" posizione [x]="2220" [y]="332" [w]="280"
+   [h]="90">
+  {{ httpService.numberOfQuiz }}
+</p>
+
+<!--Immagine e rotta per la LeaderBoard-->
+<a routerLink="/leaderboard">
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="leaderboardSound()"
+       posizione [x]="805" [y]="150" [w]="560" [h]="515"
+       src="sfondi_schermate/bottoni/leaderboard.png" alt="LB">
+</a>
+
+<a>
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="eatNoodle()"
+       posizione [x]="1378" [y]="618" [w]="240" [h]="215"
+       src="sfondi_schermate/bottoni/noodle.png" alt="noodle">
+</a>
+
+<a routerLink="/blueBook">
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="blueBookSound()"
+       posizione [x]="195" [y]="545" [w]="46" [h]="160"
+       src="sfondi_schermate/bottoni/libroBlue.png" alt="libroBlu">
+</a>
+
+<a routerLink="/greenBook">
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="greenBookSound()"
+       posizione [x]="430" [y]="320" [w]="46" [h]="160"
+       src="sfondi_schermate/bottoni/libroVerde.png" alt="libroVerde">
+</a>
+
+<a routerLink="/desktop">
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="computerSound()"
+       posizione [x]="1584" [y]="450" [w]="446" [h]="315"
+       src="sfondi_schermate/bottoni/computerIconFixed.png" alt="computer">
+</a>
+
+<a routerLink="/difficolta">
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="computerSound()"
+       posizione [x]="820" [y]="660" [w]="45" [h]="45"
+       src="sfondi_schermate/bottoni/bottoneRosso.png" alt="bottoneRosso">
+</a>
+
+<a>
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="radioSound()"
+       posizione [x]="412" [y]="999" [w]="210" [h]="185"
+       src="sfondi_schermate/bottoni/radio.png" alt="radio">
+</a>
+
+<a>
+  <img [nascosto]="true"
+       [style.transition]="'opacity 0.1s'"
+       (click)="mayaSound()"
+       posizione [x]="5" [y]="910" [w]="305" [h]="205"
+       src="sfondi_schermate/bottoni/mayaBottone.png" alt="maya">
+</a>

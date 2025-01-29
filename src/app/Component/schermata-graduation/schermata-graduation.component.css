@@ -1,0 +1,11 @@
+#graduationInfo {
+  font-family: 'Chalkduster', serif;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Per centrare orizzontalmente */
+  justify-content: center; /* Per centrare verticalmente */
+  padding: 20px; /* Margine interno per maggiore spazio */
+  margin-bottom: 10px; /* Spazio tra i vari utenti */
+}

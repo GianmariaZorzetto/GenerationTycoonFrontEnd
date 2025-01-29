@@ -1,0 +1,51 @@
+/* Table container settings */
+.table-container {
+  max-height: 50vh;
+  overflow-y: auto;
+  background-color: transparent; /* Transparent container */
+  position: absolute; /* Ti consente di spostarlo liberamente */
+  top: 54%; /* Sposta verso il centro verticale */
+  left: 51%; /* Sposta verso il centro orizzontale */
+  transform: translate(-50%, -50%); /* Centra esattamente il contenitore */
+  width: 50%; /* Larghezza dinamica */
+}
+
+/* Table styles */
+table {
+  background-color: transparent; /* Fully transparent table background */
+  border-collapse: collapse;
+  font-size: 3vh;
+  text-align: center;
+  font-family: 'Chalkduster', serif;
+}
+
+.unscrollable {
+  scrollbar-width: none;
+}
+
+.unscrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* Table header styles */
+th {
+  z-index: 1000;
+  color: white;
+  position: sticky;
+  top: 0;
+  background-color: #379079; /* Fully transparent header */
+  border-bottom: 3px dashed #ffffff;
+}
+
+/* Table body styles */
+td {
+  color: white;
+  background-color: transparent;
+  border-bottom: 3px dashed #ffffff;
+}
+
+
+/* Row hover effect */
+tr:hover {
+  background-color: rgba(255, 255, 255, 0); /* Subtle hover effect */
+}

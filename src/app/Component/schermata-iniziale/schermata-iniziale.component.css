@@ -1,0 +1,76 @@
+/* Contenitore principale con immagine di sfondo */
+.login-container {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url('/assets/image.png'); /* Percorso dell'immagine */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Intestazione del Login */
+.login-header h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Stile del Form */
+.login-form {
+  position: absolute;
+  top: 40%; /* Regola questa percentuale per allineare */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Campi di input */
+.input-wrapper {
+  margin-bottom: 15px;
+  width: 80%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7); /* Trasparente */
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Focus sugli input */
+.login-input:focus {
+  outline: 2px solid rgba(0, 123, 255, 0.5);
+}
+
+/* Bottone di login */
+.login-button {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Hover sul bottone */
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}

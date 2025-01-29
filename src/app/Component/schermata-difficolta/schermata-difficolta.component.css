@@ -1,0 +1,61 @@
+a img {
+  display: block;
+}
+
+.base-image {
+  display: block;
+  opacity: 50%;
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+}
+
+.base-image:hover {
+  transform: scale(1.2); /* Ingrandisce l'immagine base quando hover */
+}
+
+.hover-image {
+  transition: transform 0.3s ease-in-out; /* Rende l'ingrandimento fluido */
+  z-index: 3;
+}
+
+.image-container img {
+  transition: opacity 0.3s ease;
+}
+
+/* SCSS per input scontornato */
+.scontornato-input {
+  border: 1px solid #000000; /* Bordo sottile, colore chiaro */
+  border-radius: 20px; /* Angoli arrotondati per un aspetto più morbido */
+  padding: 12px 20px; /* Padding più ampio per un look più morbido */
+  background-color: rgb(221, 238, 255, 0.71); /* Colore di sfondo con opacità al 71% */
+  font-size: 140%; /* Adatta la dimensione del testo */
+  color: #464646;
+  /* Centrare il testo del placeholder */
+  text-align: center; /* Centra il testo orizzontalmente */
+}
+
+.scontornato-input::placeholder {
+  font-size: 140%;
+  font-family: sans-serif; /* Aumenta la dimensione del font del placeholder */
+  color: #464646; /* Colore del placeholder (puoi scegliere il colore che preferisci) */
+  text-align: center; /* Centra il testo del placeholder anche in verticale */
+}
+
+.scontornato-input:focus {
+  border-color: #64b5f6; /* Colore di focus più chiaro */
+  outline: none; /* Rimuove il contorno predefinito */
+  box-shadow: 0 0 8px rgba(100, 181, 246, 0.5); /* Aggiungi un'ombra leggera */
+}
+
+.selected {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per dare l'effetto "premuto" */
+}
+
+.selected .base-image {
+  opacity: 1; /* Riduci l'opacità dell'immagine base quando selezionato */
+  transform: scale(1.2);
+}
+
+.selected .hover-image {
+  opacity: 1; /* Mantieni visibile l'immagine hover quando selezionato */
+}
+

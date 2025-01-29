@@ -1,0 +1,26 @@
+.cross-group,
+.cross-group * {
+  box-sizing: border-box;
+}
+
+.cross-group {
+  width: 18px;
+  height: auto;
+  overflow: visible;
+  position: absolute;
+  right: 164px;
+  top: 27px;
+}
+
+.boom-exit-call * {
+  box-sizing: border-box;
+}
+
+.boom-exit-call {
+  height: auto;
+  position: absolute;
+  overflow: visible;
+  top: 832px;
+  left: 915px;
+  width: 52px;
+}

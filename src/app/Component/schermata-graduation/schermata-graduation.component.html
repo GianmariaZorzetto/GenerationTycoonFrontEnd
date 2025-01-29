@@ -1,0 +1,40 @@
+<div id="graduationInfo">
+  <p posizione [x]="825" [y]="513" [w]="60" [h]="65" style="font-size: 48px;">
+    {{ graduationInfo.username }}
+  </p>
+  <p posizione [x]="825" [y]="660" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+    Livello sfida:
+  </p>
+
+  <p posizione [x]="1480" [y]="660" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+    {{ graduationInfo.difficulty == "EASY" ? "Facile" : graduationInfo.difficulty == "MEDIUM" ? "Intermedio" : "Avanzato" }}
+  </p>
+
+  <p posizione [x]="825" [y]="782" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+    Punteggio finale:
+  </p>
+  <p posizione [x]="1480" [y]="782" [w]="60" [h]="65" style="font-size: 38px; white-space: nowrap;">
+  {{ graduationInfo.score }}
+  </p>
+</div>
+<a routerLink="/difficolta">
+  <img posizione
+       [x]="1000"
+       [y]="700"
+       [w]="300"
+       [h]="90"
+       [centroMassa]="true"
+       [hoverabile]="true"
+       [autore]="'D'" src="sfondi_schermate/graduation/Rigioca.png" alt="bottone riprova"/>
+</a>
+
+<a (click)="setViteZero()">
+  <img posizione
+       [x]="1410"
+       [y]="170"
+       [w]="60"
+       [h]="60"
+       [centroMassa]="true"
+       [hoverabile]="true"
+       [autore]="'D'" src="sfondi_schermate/bottoni/x.png" alt="leaderboard"/>
+</a>

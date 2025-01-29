@@ -1,0 +1,101 @@
+import {Component} from "@angular/core";
+import {Router, RouterLink} from "@angular/router";
+import {BackgroundService} from "../../../../services/background.service";
+import {FormsModule} from "@angular/forms";
+import {UserRegistrationDTOReq} from "../../model/UserRegistrationDTOReq";
+import {PosizionaDirective} from "../../direttive/posiziona.directive";
+import {NgClass, NgIf} from "@angular/common";
+import {HttpService} from "../../services/http-service.service";
+import {AudioLoopService} from '../../services/audio-loop.service';
+
+
+@Component({
+  selector: "app-schermata-registrati",
+  imports: [FormsModule, PosizionaDirective, NgIf, RouterLink, NgClass],
+  templateUrl: "./schermata-registrati.component.html",
+  standalone: true,
+  styleUrls: ["./schermata-registrati.component.css"]
+})
+export class SchermataRegistratiComponent {
+
+  showPassword = true;
+
+  user: UserRegistrationDTOReq = {
+    email: "",
+    username: "",
+    password: "",
+    difficulty: "EASY" // Valore predefinito come stringa
+  };
+
+  // Valore predefinito
+  selectedDifficulty: string = "EASY";
+  selectedButton: string = 'EASY';
+
+  // Array di oggetti che rappresentano i bottoni di difficoltà
+  items = [
+    {
+      baseX: 440, baseY: 531, baseW: 173, baseH: 47,
+      baseImage: "sfondi_schermate/register/facile_button.png",
+      hoverImage: "sfondi_schermate/register/modalita_facile.png",
+      isHovered: false,
+      // Aggiungi altre caratteristiche che non dipendono dal mouse
+    },
+    {
+      baseX: 680, baseY: 531, baseW: 173, baseH: 47,
+      baseImage: "sfondi_schermate/register/intermedio_button.png",
+      hoverImage: "sfondi_schermate/register/modalita_intermedia.png",
+      isHovered: false,
+    },
+    {
+      baseX: 920, baseY: 531, baseW: 173, baseH: 47,
+      baseImage: "sfondi_schermate/register/avanzato_button.png",
+      hoverImage: "sfondi_schermate/register/modalita_avanzata.png",
+      isHovered: false,
+    }
+  ];
+
+  // Metodo chiamato quando il mouse entra nell"area dell"elemento
+  onMouseEnter(index: number) {
+    this.items[index].isHovered = true;
+  }
+
+  // Metodo chiamato quando il mouse esce dall"area dell"elemento
+  onMouseLeave(index: number) {
+    this.items[index].isHovered = false;
+  }
+
+  // Metodo per selezionare la difficoltà (EASY, MEDIUM, HARD)
+  selectDifficulty(difficulty: string) {
+    this.selectedDifficulty = difficulty;
+    this.selectedButton = difficulty;
+    this.user.difficulty = difficulty; // Aggiorna la difficoltà nel modello user
+  }
+
+  difficultyToNumber = {
+    EASY: 3,
+    MEDIUM: 2,
+    HARD: 1
+  }
+
+  // Metodo per gestire il salvataggio del nuovo utente
+  saveUser() {
+
+    // Chiamata al servizio HTTP per salvare l"utente
+    this.httpService.register(this.user).subscribe(
+      {
+        next: (res) => {
+          this.httpService.reinitializeUser(res)
+          this.audioService.playLoop()
+          this.audioService.setVolume(0.05)
+          this.route.navigate(["/benvenuto"])
+        },
+        error: (err) => {
+          alert("Errore, riprova")
+        }
+      });
+  }
+
+  constructor(private service: BackgroundService, private route: Router, private httpService: HttpService, private audioService: AudioLoopService) {
+    this.service.changeBackground("register/schermata_registrazione.png");
+  }
+}

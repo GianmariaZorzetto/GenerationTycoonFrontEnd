@@ -1,0 +1,62 @@
+/*body {*/
+/*  display: block;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  background: url('/sfondi_schermate/immagine3.svg') no-repeat center center;*/
+/*  background-size: cover;*/
+/*  !* Se vuoi l’immagine fissa durante lo scroll /*/
+/*  / background-attachment: fixed; *!*/
+/*}*/
+
+/*html, body {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
+
+@import "bootstrapCustomizzato";
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Imposta lo sfondo con barre nere */
+body {
+  background-color: #000; /* colore delle “barre” */
+  background-image: url('/nero/nero.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* Contiene l'intera immagine */
+}
+
+.sfondo {
+  /* Occupa tutto lo schermo */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: relative !important;
+
+  /* Lo sfondo che vuoi */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sovrapposto {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+@font-face {
+  font-family: 'Chalkduster'; /* Name of the font */
+  src: url('/fonts/Chalkduster.ttf') format('truetype'); /* Path to the font file */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}
